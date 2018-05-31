@@ -4,5 +4,6 @@
     "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
     "window.zoomLevel": 1,
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Visual Studio Light"
+    "workbench.colorTheme": "Visual Studio Light",
+    "vim.foldfix": true
   }
