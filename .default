@@ -1,0 +1,5 @@
+source ~/dotfile/.zshrc
+source ~/dotfile/.user
+source ~/dotfile/.plugin
+source ~/dotfile/.alias
+source ~/dotfile/.android
