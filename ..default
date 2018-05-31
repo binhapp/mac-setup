@@ -1,0 +1,5 @@
+source .zshrc
+source .user
+source .plugin
+source .alias
+source .android
