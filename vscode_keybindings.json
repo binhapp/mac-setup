@@ -1,19 +1,43 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-    {
-        "key": "cmd+1",
-        "command": "workbench.view.explorer"
-    },
-    {
-        "key": "shift+cmd+e",
-        "command": "-workbench.view.explorer"
-    },
-    {
-        "key": "cmd+0",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "cmd+b",
-        "command": "-workbench.action.toggleSidebarVisibility"
-    }
+  {
+    "key": "cmd+0",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "-workbench.view.explorer"
+  },
+  {
+    "key": "cmd+6",
+    "command": "workbench.view.debug"
+  },
+  {
+    "key": "shift+cmd+d",
+    "command": "-workbench.view.debug"
+  },
+  {
+    "key": "ctrl+6",
+    "command": "workbench.action.gotoSymbol"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "-workbench.action.gotoSymbol"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpen"
+  },
 ]
