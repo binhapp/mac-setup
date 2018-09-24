@@ -1,5 +1,19 @@
 source ~/dotfile/.zshrc
-source ~/dotfile/.user
-source ~/dotfile/.plugin
 source ~/dotfile/.alias
-source ~/dotfile/.android
+
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export PATH=$JAVA_HOME/bin:$PATH
+
+export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
+export REACT_EDITOR=code
+
+export PATH=$HOME/.fastlane/bin:$PATH
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/tools/bin:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+
+export EMULATOR=$ANDROID_HOME/tools/emulator
+
+export PATH=$HOME/flutter/bin:$PATH

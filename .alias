@@ -1,3 +1,2 @@
 alias stree='open -a SourceTree'
-alias vscode='open -a Visual\ Studio\ Code'
 alias xcode='open -a Xcode'
