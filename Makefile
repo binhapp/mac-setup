@@ -8,3 +8,7 @@ vscode-get:
 vscode-set:
 	cp ~/Library/Application\ Support/Code/User/keybindings.json vscode_keybindings.json
 	cp ~/Library/Application\ Support/Code/User/settings.json vscode_settings.json
+vmd-get:
+	cp ~/.vmdrc .vmdrc
+vmd-set:
+	cp .vmrc ~/.vmdrc
