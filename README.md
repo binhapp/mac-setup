@@ -24,15 +24,23 @@ sudo gem intall cocoapods
 pod --version
 ```
 
+## Node Version Manager
 ```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 nvm --version
+```
 
-nvm install
+```
+nvm install 8.0.0
 npm --version
+```
 
+```
 npm install -g yarn
 yarn --version
+```
 
+```
 npm install -g ios-deploy
 ios-deploy --version
 ```
