@@ -1,6 +1,4 @@
-# Setup for new mac
-
-## Applications
+# Applications
 
 - Xcode
 - Cocoapods
