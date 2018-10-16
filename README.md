@@ -1,4 +1,12 @@
 # Applications
 
+- iTerm2
 - Xcode
-- Cocoapods
+
+# Command-line interface
+
+- zsh
+- brew
+- pod
+- nvm
+- npm
