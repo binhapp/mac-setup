@@ -1,3 +1,4 @@
 language: objective-c
 script:
   - ./install.sh
+  - curl -o- https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bash
