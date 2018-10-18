@@ -2,9 +2,9 @@
 
 # Applications
 
-- iTerm2
+- [iTerm2](https://www.iterm2.com/downloads.html)
 - Xcode
-- Android Studio
+- [Android Studio](https://developer.android.com/studio/)
 
 # Command-line interface
 
