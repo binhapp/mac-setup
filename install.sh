@@ -27,15 +27,7 @@ source-zshrc() {
 	fi
 }
 
---xcodebuild() {
-	if exist xcodebuild; then
-		xcodebuild -version
-	else
-		if ! force-install; then
-			exit
-		fi
-	fi
-}
+xcodebuild -version
 
 --zsh() {
 	if exist zsh; then
@@ -100,12 +92,10 @@ source-zshrc() {
 	if exist travis; then
 		travis version
 	else
-		# gem install travis -v 1.8.9 --no-rdoc --no-ri
 		gem install travis --no-rdoc --no-ri
 	fi
 }
 
---xcodebuild
 --zsh
 --rvm
 --ruby
