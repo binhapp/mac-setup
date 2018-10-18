@@ -3,7 +3,7 @@
 set -e
 
 force-install() {
-  $FORCE_INSTALL
+  [[ -v $FORCE_INSTALL ]]
 }
 
 installed() {
