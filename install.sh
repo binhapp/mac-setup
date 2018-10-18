@@ -93,6 +93,8 @@ xcodebuild -version
 		travis version
 	else
 		gem install travis --no-rdoc --no-ri
+		source-zshrc
+		travis version
 	fi
 }
 
