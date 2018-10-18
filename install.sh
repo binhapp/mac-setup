@@ -3,7 +3,8 @@
 set -e
 
 exist() {
-  echo ---
+  echo
+  echo "## $1"
   # command -v $1 >/dev/null 2>&1
   # hash $1 2>/dev/null
   if command -v $1 >/dev/null 2>&1; then
@@ -66,7 +67,6 @@ exist() {
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
   if exist nvm; then
-    echo nvm
     nvm --version
   else
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
@@ -84,10 +84,10 @@ exist() {
   fi
 }
 
--xcodebuild
--zsh
--rvm
--ruby
--brew
--nvm
--pod
+--xcodebuild
+--zsh
+--rvm
+--ruby
+--brew
+--nvm
+--pod
