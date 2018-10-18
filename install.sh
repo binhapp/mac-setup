@@ -6,23 +6,17 @@ force-install() {
   [ $FORCE_INSTALL ]
 }
 
-installed() {
-  if force-install; then
-    false
-  else
-    command -v $1 >/dev/null 2>&1
-    # hash $1 2>/dev/null
-  fi
-}
-
 exist() {
   echo
   echo "## $1"
-  if installed; then
+  if force-install; then
+		echo "force install $1"
+    false
+  elif command -v $1 >/dev/null 2>&1; then
     which $1
     true
   else
-    echo $1 not installed
+    echo "$1 not installed"
     false
   fi
 }
@@ -74,7 +68,7 @@ source-zshrc() {
 --brew() {
   if exist brew; then
     brew --version
-  else
+  elif [ ! $CI ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew --version
   fi
