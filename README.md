@@ -10,4 +10,5 @@
 - rvm
 - ruby
 - brew
+- nvm
 - pod
