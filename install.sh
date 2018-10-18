@@ -32,7 +32,7 @@ xcodebuild -version
 --zsh() {
 	if exist zsh; then
 		zsh --version
-	else
+	elif [ ! $CI ]; then
 		sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 		zsh --version
 	fi
@@ -60,7 +60,7 @@ xcodebuild -version
 --brew() {
 	if exist brew; then
 		brew --version
-	elif [ ! [ $TRAVIS ] ]; then
+	elif [ ! $CI ]; then
 		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 		brew --version
 	fi
