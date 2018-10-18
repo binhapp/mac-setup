@@ -1,5 +1,10 @@
 language: objective-c
+sudo: required
 script:
   - ./install.sh
 after_success:
   - curl -o- https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bash
+env:
+  matrix:
+    - FORCE_INSTALL=false
+    - FORCE_INSTALL=true

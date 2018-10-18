@@ -2,12 +2,23 @@
 
 set -e
 
+force-install() {
+  $FORCE_INSTALL
+}
+
+installed() {
+  if force-install; then
+    false
+  else
+    command -v $1 >/dev/null 2>&1
+    # hash $1 2>/dev/null
+  fi
+}
+
 exist() {
   echo
   echo "## $1"
-  # command -v $1 >/dev/null 2>&1
-  # hash $1 2>/dev/null
-  if command -v $1 >/dev/null 2>&1; then
+  if installed; then
     which $1
     true
   else
@@ -16,11 +27,19 @@ exist() {
   fi
 }
 
+source-zshrc() {
+  if !force-install; then
+    source ~/.zshrc
+  fi
+}
+
 --xcodebuild() {
   if exist xcodebuild; then
     xcodebuild -version
   else
-    exit
+    if !force-install; then
+      exit
+    fi
   fi
 }
 
@@ -38,7 +57,7 @@ exist() {
     rvm --version
   else
     \curl -sSL https://get.rvm.io | bash -s stable
-    source ~/.zshrc
+    source-zshrc
     rvm --version
   fi
 }
@@ -70,7 +89,7 @@ exist() {
     nvm --version
   else
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-    source ~/.zshrc
+    source-zshrc
     nvm --version
   fi
 }
