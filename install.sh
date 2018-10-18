@@ -3,7 +3,7 @@
 set -e
 
 force-install() {
-	[ $FORCE_INSTALL ]
+	[ $FORCE_INSTALL == true ]
 }
 
 exist() {
