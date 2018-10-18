@@ -6,9 +6,13 @@
 
 # Command-line interface
 
+```
+curl -o- https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bash
+```
+
 - zsh
 - rvm
-- ruby
+  - ruby
+    - pod
 - brew
 - nvm
-- pod

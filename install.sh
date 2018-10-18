@@ -84,14 +84,10 @@ exist() {
   fi
 }
 
---all() {
-  -xcodebuild
-  -zsh
-  -rvm
-  -ruby
-  -brew
-  -nvm
-  -pod
-}
-
-$@
+-xcodebuild
+-zsh
+-rvm
+-ruby
+-brew
+-nvm
+-pod
