@@ -96,6 +96,15 @@ source-zshrc() {
 	fi
 }
 
+--travis() {
+	if exist travis; then
+		travis version
+	else
+		# gem install travis -v 1.8.9 --no-rdoc --no-ri
+		gem install travis --no-rdoc --no-ri
+	fi
+}
+
 --xcodebuild
 --zsh
 --rvm
@@ -103,3 +112,4 @@ source-zshrc() {
 --brew
 --nvm
 --pod
+--travis

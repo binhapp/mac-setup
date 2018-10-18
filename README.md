@@ -14,7 +14,8 @@ curl -o- https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh |
 
 - zsh
 - rvm
-  - ruby
-    - pod
+	- ruby
+		- pod
+		- travis
 - brew
 - nvm
