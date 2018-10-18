@@ -1,9 +1,12 @@
 #!/bin/bash
 
+set -e
+
 exist() {
   echo ---
-  # command -v "$1" >/dev/null 2>&1
-  if hash $1 2>/dev/null; then
+  # command -v $1 >/dev/null 2>&1
+  # hash $1 2>/dev/null
+  if command -v $1 >/dev/null 2>&1; then
     which $1
     true
   else
@@ -27,17 +30,29 @@ fi
 
 if exist rvm; then
   rvm --version
-  ruby --version
 else
   \curl -sSL https://get.rvm.io | bash -s stable
   source ~/.zshrc
   rvm --version
+fi
+
+if exist ruby; then
+  ruby --version
+else
+  rvm install ruby
   ruby --version
 fi
 
 if exist brew; then
   brew --version
 else
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew --version
+fi
+
+if exist pod; then
+  pod --version
+else
+  gem install cocoapods
+  pod --version
 fi
