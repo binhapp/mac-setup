@@ -60,7 +60,7 @@ xcodebuild -version
 --brew() {
 	if exist brew; then
 		brew --version
-	elif [ ! $CI ]; then
+	elif [ ! [ $CI ] ]; then
 		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 		brew --version
 	fi
