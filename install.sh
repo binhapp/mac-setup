@@ -28,7 +28,7 @@ exist() {
 }
 
 source-zshrc() {
-  if !force-install; then
+  if ! force-install; then
     source ~/.zshrc
   fi
 }
@@ -37,7 +37,7 @@ source-zshrc() {
   if exist xcodebuild; then
     xcodebuild -version
   else
-    if !force-install; then
+    if ! force-install; then
       exit
     fi
   fi
