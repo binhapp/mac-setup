@@ -98,6 +98,15 @@ xcodebuild -version
 	fi
 }
 
+--fastlane() {
+	if exist fastlane; then
+		fastlane --version
+	else
+		gem install fastlane -NV
+		fastlane --version
+	fi
+}
+
 --zsh
 --rvm
 --ruby
@@ -105,3 +114,4 @@ xcodebuild -version
 --nvm
 --pod
 --travis
+--fastlane
