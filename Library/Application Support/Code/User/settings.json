@@ -1,0 +1,9 @@
+{
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": false,
+    "vim.foldfix": true,
+    "javascript.validate.enable": false
+  }

@@ -93,7 +93,7 @@ xcodebuild -version
 		travis version
 	else
 		gem install travis --no-rdoc --no-ri
-		[ -f /Users/blcsntb/.travis/travis.sh ] && source /Users/blcsntb/.travis/travis.sh
+		[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 		travis version
 	fi
 }
