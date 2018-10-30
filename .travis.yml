@@ -1,7 +1,7 @@
 language: objective-c
 script:
   - ./script/install.sh
-  - ./script/install-test.sh
+  - ./script/install.test.sh
 env:
   matrix:
     -
