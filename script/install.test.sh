@@ -1,3 +1,1 @@
-#!/bin/bash
-
-curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bash
+curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/script/install.sh | bash
