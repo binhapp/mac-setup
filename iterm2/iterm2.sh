@@ -1,6 +1,5 @@
 #!/bin/bash
 
-configdir=~/.mac-setup/iterm2/com.googlecode.iterm2.plist
 plistfile=~/Library/Preferences/com.googlecode.iterm2.plist
 themesdir=~/.oh-my-zsh/custom/themes
 powerlevel9kdir=$themesdir/powerlevel9k
@@ -63,18 +62,6 @@ doc_append "
   --custom-theme
   --custom-color
   --custom-font
-}
-
-doc_append_separator "
---config-get"
---config-get() {
-  cp "$plistfile" "$configdir"
-}
-
-doc_append "
---config-set"
---config-set() {
-  cp "$configdir" "$plistfile"
 }
 
 if [ "$1" == "" ]; then

@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+  "terminal.integrated.fontSize": 14,
+  "window.zoomLevel": 0,
+  "editor.minimap.enabled": false,
+  "vim.foldfix": true,
+  "javascript.validate.enable": false,
+  "javascript.updateImportsOnFileMove.enabled": "always"
+}

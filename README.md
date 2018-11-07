@@ -9,14 +9,19 @@
 # Command-line interface
 
 ```
-curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/script/install.sh | bash
+curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bash
 ```
 
 - zsh
 - rvm
 	- ruby
 		- pod
-		- travis
 		- fastlane
 - brew
 - nvm
+
+# Configure
+
+```
+curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/config.sh | bash
+```

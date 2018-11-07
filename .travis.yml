@@ -1,8 +1,2 @@
 language: objective-c
-script:
-  - ./script/install.sh
-  - ./script/install.test.sh
-env:
-  matrix:
-    -
-    - FORCE_INSTALL=true
+script: ./test.sh

@@ -94,6 +94,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias xcode='open -a Xcode'
 alias stree='open -a SourceTree'
+alias show-all-files-true='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
+alias show-all-files-false='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
 
 # Plugins
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -101,16 +103,25 @@ alias stree='open -a SourceTree'
 
 DEFAULT_USER=`whoami`
 
+# java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH=$JAVA_HOME/bin:$PATH
 
+# android
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/tools/bin:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export EMULATOR=$ANDROID_HOME/tools/emulator
 
+# vscode
 export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
 export REACT_EDITOR=code
 
+# fastlane
 export PATH=$HOME/.fastlane/bin:$PATH
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
