@@ -20,7 +20,7 @@ curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bas
 - brew
 - nvm
 
-# Configure
+# Configuration
 
 ```
 curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/config.sh | bash

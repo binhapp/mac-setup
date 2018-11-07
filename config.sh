@@ -9,15 +9,15 @@ else
 fi
 
 # zsh
-rm ~/.zshrc
+[ -f ~/.zshrc ] && rm ~/.zshrc
 ln -s ~/mac-setup/zsh/.zshrc ~/.zshrc
 
 # vim
-rm ~/.vimrc
+[ -f ~/.vimrc ] && rm ~/.vimrc
 ln -s ~/mac-setup/vim/.vimrc ~/.vimrc
 
 # gitignore
-rm ~/.gitignore_global
+[ -f ~/.gitignore_global ] && rm ~/.gitignore_global
 ln -s ~/mac-setup/gitignore/.gitignore_global ~/.gitignore_global
 
 # vscode
