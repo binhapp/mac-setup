@@ -65,8 +65,8 @@ doc_append "
 }
 
 if [ "$1" == "" ]; then
-  echo "[--help]"
-  --help
+  echo "[--custom-all]"
+  --custom-all
 else
   echo "[$1]"
   $1

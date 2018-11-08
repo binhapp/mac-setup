@@ -5,3 +5,4 @@ script:
 after_success:
   - curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bash
   - curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/config.sh | bash
+  - curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/iterm2/iterm2.sh | bash
