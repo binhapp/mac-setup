@@ -103,6 +103,8 @@ alias show-all-files-false='defaults write com.apple.finder AppleShowAllFiles NO
 
 DEFAULT_USER=`whoami`
 
+export MAC_SETUP_DIR=$HOME/mac-setup
+
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH=$JAVA_HOME/bin:$PATH
@@ -121,10 +123,7 @@ export REACT_EDITOR=code
 # fastlane
 export PATH=$HOME/.fastlane/bin:$PATH
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source $MAC_SETUP_DIR/nvm/.nvmrc
 
 # rvm
 source $HOME/.rvm/scripts/rvm
