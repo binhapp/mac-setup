@@ -65,3 +65,6 @@ else
   gem install fastlane -NV
   fastlane --version
 fi
+
+$MAC_SETUP_DIR/python/python.sh
+$MAC_SETUP_DIR/powerline/powerline.sh --install

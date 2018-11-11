@@ -1,0 +1,20 @@
+export ZSH=~/.oh-my-zsh
+export MAC_SETUP_DIR=$HOME/mac-setup
+
+ZSH_THEME="robbyrussell"
+
+source $ZSH/oh-my-zsh.sh
+source $MAC_SETUP_DIR/python/pythonrc
+source $MAC_SETUP_DIR/powerline/powerlinerc
+source $MAC_SETUP_DIR/z/zrc
+source $MAC_SETUP_DIR/nvm/.nvmrc
+source $MAC_SETUP_DIR/rvm/.rvmrc
+source $MAC_SETUP_DIR/vscode/vscoderc
+source $MAC_SETUP_DIR/java/javarc
+source $MAC_SETUP_DIR/android/androidrc
+source $MAC_SETUP_DIR/fastlane/fastlanerc
+
+alias xcode='open -a Xcode'
+alias stree='open -a SourceTree'
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
