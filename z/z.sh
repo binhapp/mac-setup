@@ -9,4 +9,8 @@
   rm -rf $ZSH/z
 }
 
+--config() {
+  --install
+}
+
 $@
