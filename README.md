@@ -9,7 +9,7 @@
 # Command-line interface
 
 ```
-curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bash
+curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup.sh | bash
 ```
 
 - zsh
@@ -19,9 +19,3 @@ curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bas
 		- fastlane
 - brew
 - nvm
-
-# Configuration
-
-```
-curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/config.sh | bash
-```

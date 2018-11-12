@@ -1,1 +1,1 @@
-. $ZSH/z/z.sh
+[ -d $ZSH/z ] && . $ZSH/z/z.sh

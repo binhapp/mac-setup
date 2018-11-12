@@ -1,44 +1,26 @@
-source $MAC_SETUP_DIR/nvm/.nvmrc
 
-exist() {
-	echo "
-## $1"
-	if command -v $1 >/dev/null 2>&1; then
-		which $1
-		true
-	else
-		echo "$1 not installed"
-		false
-	fi
-}
+$MAC_SETUP_DIR/install.sh nvm \
+  --script-exist "[ -d ~/.nvm ]" \
+  --script-which "" \
+  --script-version "" \
+  --script-install "
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash" \
+  $@
 
-install() {
-  install="$2"
-  version="$3"
-  if exist "$1"; then
-    $version
-  else
-    $install
-    $version
-  fi
-}
+$MAC_SETUP_DIR/install.sh node --script-install "nvm install 9.11.2" $@
 
-install \
-  "nvm" \
-  "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash" \
-  "nvm --version" \
+$MAC_SETUP_DIR/install.sh yarn --script-install "npm install -g yarn" $@
 
-install \
-  "node" \
-  "nvm install 9.11.2" \
-  "node --version" \
+$MAC_SETUP_DIR/install.sh jest --script-install "npm install -g jest" $@
 
-install \
-  "yarn" \
-  "npm install -g yarn" \
-  "yarn --version" \
+$MAC_SETUP_DIR/install.sh appium --script-install "npm install -g appium" $@
 
-exit
-  jest \
-  appium \
-  appium-doctor \
+$MAC_SETUP_DIR/install.sh appium-doctor --script-install "npm install -g apppium-doctor" $@
+
+$MAC_SETUP_DIR/install.sh vmd \
+  --script-install "npm install -g vmd" \
+  --script-config "
+    rm ~/.vmdrc
+    ln -s $MAC_SETUP_DIR/vmd/vmdrc ~/.vmdrc
+    ls -la ~/.vmdrc" \
+  $@

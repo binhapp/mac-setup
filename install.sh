@@ -1,70 +1,78 @@
 #!/bin/bash
 
-set -e
+app=$1
+exist="command -v $app >/dev/null 2>&1"
+which="which $app"
+version="$app --version"
+install=
+config=
+uninstall=
+
+echo ""
+echo "# $app"
 
 exist() {
-	echo
-	echo "## $1"
-	if command -v $1 >/dev/null 2>&1; then
-		which $1
-		true
-	else
-		echo "$1 not installed"
-		false
-	fi
+  echo "$exist" | bash
 }
 
-# xcodebuild
-xcodebuild -version
+install() {
+  if [ "$install" != "" ]; then
+    if ! exist; then
+      echo "## install"
+      echo "$install" | bash
+    fi
+  fi
+  if [ "$version" != "" ]; then
+    echo "## version"
+    $version
+  fi
+  if [ "$which" != "" ]; then
+    echo "## which"
+    $which
+  fi
+}
 
-# zsh
-if exist zsh; then
-  zsh --version
-elif [ ! $CI ]; then
-  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  zsh --version
-fi
+config() {
+  if [ "$config" != "" ]; then
+    echo "## config"
+    echo "$config" | bash
+  fi
+}
 
-# rvm
-if exist rvm; then
-  rvm --version
-else
-  \curl -sSL https://get.rvm.io | bash -s stable
-  source ~/.zshrc
-  rvm --version
-fi
+uninstall() {
+  if [ "$uninstall" != "" ]; then
+    echo "## uninstall"
+    echo "$uninstall" | bash
+  fi
+}
 
-# ruby
-if exist ruby; then
-  ruby --version
-else
-  rvm install ruby
-  ruby --version
-fi
+help() {
+  echo "usage:"
+}
 
-# brew
-if exist brew; then
-  brew --version
-elif [ ! $CI ]; then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew --version
-fi
-
-# pod
-if exist pod; then
-  pod --version
-else
-  gem install cocoapods
-  pod --version
-fi
-
-# fastlane
-if exist fastlane; then
-  fastlane --version
-else
-  gem install fastlane -NV
-  fastlane --version
-fi
-
-$MAC_SETUP_DIR/python/python.sh
-$MAC_SETUP_DIR/powerline/powerline.sh --install
+while [ "$1" != "" ]; do
+  case $1 in
+    --script-exist ) shift
+      exist=$1;;
+    --script-which ) shift
+      which=$1;;
+    --script-version ) shift
+      version=$1;;
+    --script-install ) shift
+      install=$1;;
+    --install )
+      install;;
+    --script-config ) shift
+      config=$1;;
+    --config ) shift
+      config;;
+    --script-uninstall ) shift
+      uninstall=$1;;
+    --uninstall )
+      uninstall;;
+    --help )
+      help
+      exit
+  esac
+  shift
+done
