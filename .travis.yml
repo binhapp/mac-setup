@@ -3,6 +3,6 @@ env:
   global:
     - MAC_SETUP_DIR=~/mac-setup
 script:
-  - ./mac-setup.sh
+  - ./mac-setup.sh --install
 after_success:
   - curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup.sh | bash
