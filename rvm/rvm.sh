@@ -1,6 +1,7 @@
 #!/bin/bash
 
 $MAC_SETUP_DIR/install.sh rvm \
+  --script-version "" \
   --script-install "
     \curl -sSL https://get.rvm.io | bash -s stable" \
   $@

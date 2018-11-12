@@ -1,8 +1,6 @@
 #!/bin/bash
 
-MAC_SETUP_DIR=~/mac-setup
-
-if [ ! -d ~/mac-setup ]; then
+if [ ! -d $MAC_SETUP_DIR ]; then
   git clone https://github.com/blcsntb/mac-setup $MAC_SETUP_DIR
 else
   cd $MAC_SETUP_DIR

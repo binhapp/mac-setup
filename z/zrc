@@ -1,1 +1,1 @@
-[ -d $ZSH/z ] && . $ZSH/z/z.sh
+[ -d ~/.oh-my-zsh/z ] && . ~/.oh-my-zsh/z/z.sh

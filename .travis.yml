@@ -1,4 +1,7 @@
 language: objective-c
+env:
+  global:
+    - MAC_SETUP_DIR=~/mac-setup
 script:
   - ./mac-setup.sh
 after_success:
