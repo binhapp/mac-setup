@@ -8,11 +8,7 @@ $MAC_SETUP_DIR/install.sh rvm \
 
 $MAC_SETUP_DIR/install.sh ruby --script-install "rvm install ruby" $@
 
-$MAC_SETUP_DIR/install.sh brew \
-  --script-install '
-  [ ! "$CI" ] && \
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)' \
-  $@
+$MAC_SETUP_DIR/brew/brew.sh $@
 
 $MAC_SETUP_DIR/install.sh pod --script-install "gem install cocoapods" $@
 
