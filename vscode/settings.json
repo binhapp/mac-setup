@@ -1,8 +1,8 @@
 {
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
-  "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
+  "terminal.integrated.fontSize": 12,
   "window.zoomLevel": 0,
   "editor.minimap.enabled": false,
   "vim.foldfix": true,
