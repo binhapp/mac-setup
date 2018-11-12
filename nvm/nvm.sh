@@ -15,7 +15,7 @@ $MAC_SETUP_DIR/install.sh jest --script-install "npm install -g jest" $@
 
 $MAC_SETUP_DIR/install.sh appium --script-install "npm install -g appium" $@
 
-$MAC_SETUP_DIR/install.sh appium-doctor --script-install "npm install -g apppium-doctor" $@
+$MAC_SETUP_DIR/install.sh appium-doctor --script-install "npm install -g appium-doctor" $@
 
 $MAC_SETUP_DIR/install.sh vmd \
   --script-install "npm install -g vmd" \
