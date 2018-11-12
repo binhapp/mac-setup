@@ -1,16 +1,14 @@
 #!/bin/bash
 
-Z_DIR=~/.oh-my-zsh/z
-
 $MAC_SETUP_DIR/install.sh z \
   --script-version "" \
-  --script-which "echo $Z_DIR" \
+  --script-which "echo $ZSH/z" \
   --script-install "
-    [ ! -d $Z_DIR ] && \
-      git clone https://github.com/rupa/z $Z_DIR" \
+    [ ! -d $ZSH/z ] && \
+      git clone https://github.com/rupa/z $ZSH/z" \
   --script-config "
     source $MAC_SETUP_DIR/z/zrc" \
   --script-uninstall "
-    [ -d $Z_DIR ] && \
-      rm -rf $Z_DIR" \
+    [ -d $ZSH/z ] && \
+      rm -rf $ZSH/z" \
   $@
