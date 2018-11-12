@@ -12,3 +12,8 @@ $MAC_SETUP_DIR/install.sh brew \
     [ ! "$CI" ] && \
       rm -rf ~/homebrew' \
   $@
+
+$MAC_SETUP_DIR/install.sh carthage \
+  --script-version "carthage version" \
+  --script-install "brew install carthage" \
+  $@
