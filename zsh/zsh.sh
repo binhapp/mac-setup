@@ -8,7 +8,7 @@ $MAC_SETUP_DIR/install.sh zsh \
     [ -f ~/.zshrc ] && rm ~/.zshrc
     ln -s $MAC_SETUP_DIR/zsh/zshrc ~/.zshrc
     ls -la ~/.zshrc" \
-  --script-uninstall "
-    rm -rf $ZSH
-    [ -f ~/.zshrc ] && rm ~/.zshrc" \
+  --script-uninstall '
+    [ ! "$CI" ] && \
+      echo y | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/uninstall.sh)"' \
   $@
