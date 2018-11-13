@@ -1,7 +1,7 @@
 #!/bin/bash
 
 $MAC_SETUP_DIR/install.sh zsh \
-  --script-exist "[ -d $ZSH ]" \
+  --script-exist "[ -d ~/.oh-my-zsh ]" \
   --script-install '
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"' \
   --script-config "
