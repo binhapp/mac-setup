@@ -9,7 +9,6 @@
 # Command-line interface
 
 ```
-export MAC_SETUP_DIR=~/mac-setup
 curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup.sh | bash
 ```
 

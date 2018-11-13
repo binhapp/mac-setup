@@ -1,15 +1,15 @@
 #!/bin/bash
 
-$MAC_SETUP_DIR/install.sh rvm \
+~/mac-setup/install.sh rvm \
   --script-version "" \
   --script-install "
     \curl -sSL https://get.rvm.io | bash -s stable" \
   $@
 
-$MAC_SETUP_DIR/install.sh ruby --script-install "rvm install ruby" $@
+~/mac-setup/install.sh ruby --script-install "rvm install ruby" $@
 
-$MAC_SETUP_DIR/brew/brew.sh $@
+~/mac-setup/brew/brew.sh $@
 
-$MAC_SETUP_DIR/install.sh pod --script-install "gem install cocoapods" $@
+~/mac-setup/install.sh pod --script-install "gem install cocoapods" $@
 
-$MAC_SETUP_DIR/install.sh fastlane --script-install "gem install fastlane -NV" $@
+~/mac-setup/install.sh fastlane --script-install "gem install fastlane -NV" $@

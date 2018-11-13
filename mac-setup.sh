@@ -1,22 +1,22 @@
 #!/bin/bash
 
-if [ ! -d $MAC_SETUP_DIR ]; then
-  git clone https://github.com/blcsntb/mac-setup $MAC_SETUP_DIR
+if [ ! -d ~/mac-setup ]; then
+  git clone https://github.com/blcsntb/mac-setup ~/mac-setup
 else
-  cd $MAC_SETUP_DIR
+  cd ~/mac-setup
   git pull --quiet
 fi
 
 --all() {
-  $MAC_SETUP_DIR/zsh/zsh.sh $@
-  $MAC_SETUP_DIR/rvm/rvm.sh $@
-  $MAC_SETUP_DIR/nvm/nvm.sh $@
-  $MAC_SETUP_DIR/python/python.sh $@
-  $MAC_SETUP_DIR/z/z.sh $@
-  $MAC_SETUP_DIR/iterm2/iterm2.sh $@
-  $MAC_SETUP_DIR/vim/vim.sh $@
-  $MAC_SETUP_DIR/vscode/vscode.sh $@
-  $MAC_SETUP_DIR/gitignore/gitignore.sh $@
+  ~/mac-setup/zsh/zsh.sh $@
+  ~/mac-setup/rvm/rvm.sh $@
+  ~/mac-setup/nvm/nvm.sh $@
+  ~/mac-setup/python/python.sh $@
+  ~/mac-setup/z/z.sh $@
+  ~/mac-setup/iterm2/iterm2.sh $@
+  ~/mac-setup/vim/vim.sh $@
+  ~/mac-setup/vscode/vscode.sh $@
+  ~/mac-setup/gitignore/gitignore.sh $@
 }
 
 if [ "$1" == "" ]; then
