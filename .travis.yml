@@ -2,6 +2,6 @@ language: objective-c
 before_install:
   - ./mac-setup.sh --init
 install:
-  - ~/mac-setup.sh all --install
+  - ~/mac-setup/mac-setup.sh all --install
 script:
-  - ~/mac-setup.sh --test
+  - ~/mac-setup/mac-setup.sh --test
