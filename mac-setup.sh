@@ -1,13 +1,10 @@
 #!/bin/bash
 
-if [ ! -d ~/mac-setup ]; then
-  git clone https://github.com/blcsntb/mac-setup ~/mac-setup
-else
-  cd ~/mac-setup
-  git pull --quiet
-fi
+alias() {
+  ./alias/bin $@
+}
 
---all() {
+all() {
   ~/mac-setup/zsh/zsh.sh $@
   ~/mac-setup/rvm/rvm.sh $@
   ~/mac-setup/nvm/nvm.sh $@
@@ -19,8 +16,22 @@ fi
   ~/mac-setup/gitignore/gitignore.sh $@
 }
 
+--init() {
+  if [ ! -d ~/mac-setup ]; then
+    git clone https://github.com/blcsntb/mac-setup ~/mac-setup
+  else
+    cd ~/mac-setup
+    git pull --quiet
+  fi
+}
+
+--test() {
+  alias --test
+}
+
 if [ "$1" == "" ]; then
-  --all --install --config
+  --init
+  all --install --config
 else
-  --all $@
+  $@
 fi

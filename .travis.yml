@@ -1,8 +1,7 @@
 language: objective-c
-env:
-  global:
-    - MAC_SETUP_DIR=~/mac-setup
+before_install:
+  - ./mac-setup.sh --init
+install:
+  - ~/mac-setup.sh all --install
 script:
-  - ./mac-setup.sh --install
-after_success:
-  - curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup.sh | bash
+  - ~/mac-setup.sh --test

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+--gen-readme() {
+  dir=~/mac-setup/alias
+  readme=$dir/README.md
+  echo '## alias' > $readme
+  echo '```' >> $readme
+  cat $dir/.rc >> $readme
+  echo '```' >> $readme
+  cat $readme
+}
+
+--help() {
+  echo 'usage:
+mac-setup alias [--help]
+                [--gen-readme]'
+}
+
+--test() {
+  --help
+  --gen-readme
+}
+
+if [ "$1" == "" ]; then
+  --help
+else
+  $@
+fi
