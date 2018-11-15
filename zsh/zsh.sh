@@ -4,7 +4,7 @@
   --script-exist "[ -d ~/.oh-my-zsh ]" \
   --script-install '
     [ ! "$CI" ] && \
-      echo "Not run on CI"' \
+      sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"' \
   --script-config "
     [ -f ~/.zshrc ] && rm ~/.zshrc
     ln -s ~/mac-setup/zsh/zshrc ~/.zshrc
