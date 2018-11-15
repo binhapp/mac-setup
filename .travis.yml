@@ -1,10 +1,6 @@
 language: objective-c
-env:
-  global:
-    - CI=true
-before_install:
-  - ./mac-setup.sh --init
 install:
+  - ./mac-setup.sh --init
   - ~/mac-setup/mac-setup.sh all --install
 script:
   - ~/mac-setup/mac-setup.sh --test
