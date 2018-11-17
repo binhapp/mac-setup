@@ -1,6 +1,12 @@
+os: osx
 language: objective-c
+sudo: required
+before_install:
+  - git clone https://github.com/blcsntb/mac-setup ~/mac-setup
 install:
-  - ./mac-setup.sh --init
-  - ~/mac-setup/mac-setup.sh all --install
+  - ~/mac-setup/zsh/zsh.sh --uninstall
+  - source ~/.zshrc
 script:
-  - ~/mac-setup/mac-setup.sh --test
+  - ~/mac-setup/zsh/zsh.sh --install --config
+  - source ~/.zshrc
+  - which mac-setup
