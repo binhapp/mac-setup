@@ -4,9 +4,8 @@ sudo: required
 before_install:
   - git clone https://github.com/blcsntb/mac-setup ~/mac-setup
 install:
-  - ~/mac-setup/zsh/zsh.sh --uninstall
-  - source ~/.zshrc
+  - ~/mac-setup/mac-setup.sh uninstall
 script:
-  - ~/mac-setup/zsh/zsh.sh --install --config
-  - source ~/.zshrc
+  - ~/mac-setup/mac-setup.sh install
+  - source ~/mac-setup/alias/.rc
   - which mac-setup
