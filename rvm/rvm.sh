@@ -4,6 +4,9 @@
   --script-version "" \
   --script-install "
     \curl -sSL https://get.rvm.io | bash -s stable" \
+  --script-uninstall '
+    [ ! "$CI ] && \
+      [ -d ~/.rvm ] && rm -rf ~/.rvm' \
   $@
 
 ~/mac-setup/install.sh ruby --script-install "rvm install ruby" $@

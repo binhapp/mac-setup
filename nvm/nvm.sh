@@ -3,8 +3,12 @@
   --script-exist "[ -d ~/.nvm ]" \
   --script-which "" \
   --script-version "" \
-  --script-install "
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash" \
+  --script-install '
+    [ ! "$CI" ] && \
+      curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash' \
+  --script-uninstall '
+    [ ! "$CI" ] && \
+      [ -d ~/.nvm ] && rm -rf ~/.nvm' \
   $@
 
 ~/mac-setup/install.sh node --script-install "nvm install 9.11.2" $@
