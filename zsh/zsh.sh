@@ -12,5 +12,5 @@
   --script-uninstall '
     [ ! "$CI" ] && \
       echo y | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/uninstall.sh)" && \
-      [ -f "~/.zshrc*" ] && rm "~/.zshrc*"' \
+      rm ~/.zshrc*' \
   $@

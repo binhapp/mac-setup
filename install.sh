@@ -41,8 +41,10 @@ config() {
 
 uninstall() {
   if [ "$uninstall" != "" ]; then
-    echo "## uninstall"
-    echo "$uninstall" | bash
+    if exist; then
+      echo "## uninstall"
+      echo "$uninstall" | bash
+    fi
   fi
 }
 
