@@ -17,9 +17,9 @@ all() {
 }
 
 uninstall() {
-  ~/mac-setup/mac-setup/zsh/zsh.sh --uninstall
-  ~/mac-setup/mac-setup/rvm/rvm.sh --uninstall
-  ~/mac-setup/mac-setup/nvm/nvm.sh --uninstall
+  ~/mac-setup/zsh/zsh.sh --uninstall
+  ~/mac-setup/rvm/rvm.sh --uninstall
+  ~/mac-setup/nvm/nvm.sh --uninstall
   echo Please restart you session
 }
 

@@ -2,10 +2,11 @@
 
 ~/mac-setup/install.sh rvm \
   --script-version "" \
-  --script-install "
-    \curl -sSL https://get.rvm.io | bash -s stable" \
+  --script-install '
+    [ ! "$CI" ] && \
+      \curl -sSL https://get.rvm.io | bash -s stable' \
   --script-uninstall '
-    [ ! "$CI ] && \
+    [ ! "$CI" ] && \
       [ -d ~/.rvm ] && rm -rf ~/.rvm' \
   $@
 
