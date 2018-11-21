@@ -16,11 +16,18 @@ all() {
   ~/mac-setup/gitignore/gitignore.sh $@
 }
 
+install() {
+  ~/mac-setup/zsh/zsh.sh --install --config
+  ~/mac-setup/rvm/rvm.sh --install --config
+  ~/mac-setup/nvm/nvm.sh --install --config
+  echo Please restart your session
+}
+
 uninstall() {
   ~/mac-setup/zsh/zsh.sh --uninstall
   ~/mac-setup/rvm/rvm.sh --uninstall
   ~/mac-setup/nvm/nvm.sh --uninstall
-  echo Please restart you session
+  echo Please restart your session
 }
 
 --test() {
