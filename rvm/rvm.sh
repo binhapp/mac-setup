@@ -4,16 +4,16 @@
   --script-version "" \
   --script-install '
     [ ! "$CI" ] && \
-      \curl -sSL https://get.rvm.io | bash -s stable' \
+      \curl -sSL https://get.rvm.io | bash -s stable --ruby' \
   --script-uninstall '
     [ ! "$CI" ] && \
-      [ -d ~/.rvm ] && rm -rf ~/.rvm' \
+      sudo rm -rf ~/.rvm' \
   $@
 
-~/mac-setup/install.sh ruby --script-install "rvm install ruby" $@
+# ~/mac-setup/install.sh ruby --script-install "rvm install ruby" $@
 
-~/mac-setup/brew/brew.sh $@
+# ~/mac-setup/brew/brew.sh $@
 
-~/mac-setup/install.sh pod --script-install "gem install cocoapods" $@
+# ~/mac-setup/install.sh pod --script-install "gem install cocoapods" $@
 
-~/mac-setup/install.sh fastlane --script-install "gem install fastlane -NV" $@
+# ~/mac-setup/install.sh fastlane --script-install "gem install fastlane -NV" $@

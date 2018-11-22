@@ -1,0 +1,44 @@
+#!/bin/bash
+echo '## brew'
+--carthage() {
+  echo '### cartharge'
+  --install() {
+    brew install carthage
+    which carthage
+    carthage version
+  }
+  $@
+}
+--config() {
+  echo '### config'
+  source ~/mac-setup/brew/.brewrc
+}
+--install() {
+  if [ ! "$CI" ] && [ ! -d ~/.homebrew ]; then
+    echo '### install'
+    mkdir ~/.homebrew && \
+    curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
+  fi
+  --config
+  which brew
+  brew --version
+  --carthage --install
+}
+--clean() {
+  echo '### clean'
+  rm -rf ~/.homebrew
+}
+--uninstall() {
+  if [ ! "$CI" ] && [ -d ~/.homebrew ]; then
+    echo '### uninstall'
+    --config
+    echo y | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+    --clean
+  fi
+}
+--test() {
+  echo '### test'
+  --uninstall
+  --install
+}
+$@

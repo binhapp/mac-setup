@@ -1,0 +1,44 @@
+#!/bin/bash
+echo '# mac-setup'
+--all() {
+  ~/mac-setup/rvm/rvm.sh $@
+  ~/mac-setup/nvm/nvm.sh $@
+  ~/mac-setup/python/python.sh $@
+  ~/mac-setup/z/z.sh $@
+  ~/mac-setup/iterm2/iterm2.sh $@
+  ~/mac-setup/vim/vim.sh $@
+  ~/mac-setup/vscode/vscode.sh $@
+  ~/mac-setup/gitignore/gitignore.sh $@
+}
+echo_restart_session() {
+  echo '
++-----------------------------+
+| Please restart your session |
++-----------------------------+
+'
+}
+--config() {
+  echo '## config'
+  [ -f ~/.zshrc ] && rm ~/.zshrc
+  ln -s ~/mac-setup/.mac-setuprc ~/.zshrc
+  ls -la ~/.zshrc
+  echo_restart_session
+}
+--install() {
+  echo '## install'
+  ~/mac-setup/brew/brew --install
+  ~/mac-setup/zsh/zsh --install
+  --config
+}
+--uninstall() {
+  echo '## uninstall'
+  ~/mac-setup/brew/brew --uninstall
+  ~/mac-setup/zsh/zsh --uninstall
+  echo_restart_session
+}
+--test() {
+  echo '## test'
+  --uninstall
+  --install
+}
+$@

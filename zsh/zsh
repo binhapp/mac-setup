@@ -1,0 +1,25 @@
+#!/bin/bash
+echo '## zsh'
+--install() {
+  if [ ! "$CI" ] && [ ! -d ~/.oh-my-zsh ]; then
+    echo '### install'
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  fi
+}
+--clean() {
+  echo '### clean'
+  rm ~/.zshrc*
+}
+--uninstall() {
+  if [ ! "$CI" ] && [ -d ~/.oh-my-zsh ] ; then
+    echo '### uninstall'
+    echo y | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/uninstall.sh)"
+    --clean
+  fi
+}
+--test() {
+  echo '### test'
+  --uninstall
+  --install
+}
+$@

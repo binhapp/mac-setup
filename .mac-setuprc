@@ -1,0 +1,19 @@
+alias mac-setup='~/mac-setup/mac-setup'
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
+alias xcode='open -a Xcode'
+alias stree='open -a SourceTree'
+alias stree!='killall Sourcetree && stree'
+alias code!='kill -9 $(pgrep Electron) && code'
+source ~/mac-setup/zsh/.zshrc
+source ~/mac-setup/brew/.brewrc
+#source ~/mac-setup/rvm/rvmrc
+#source ~/mac-setup/nvm/nvmrc
+#source ~/mac-setup/python/pythonrc
+#source ~/mac-setup/powerline/powerlinerc
+#source ~/mac-setup/z/zrc
+#source ~/mac-setup/vscode/vscoderc
+#source ~/mac-setup/java/javarc
+#source ~/mac-setup/android/androidrc
+#source ~/mac-setup/fastlane/fastlanerc
+#source ~/mac-setup/alias/.rc

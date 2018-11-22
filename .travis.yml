@@ -1,11 +1,4 @@
 os: osx
 language: objective-c
-sudo: required
-before_install:
-  - git clone https://github.com/blcsntb/mac-setup ~/mac-setup
-install:
-  - ~/mac-setup/mac-setup.sh uninstall
 script:
-  - ~/mac-setup/mac-setup.sh install
-  - source ~/mac-setup/alias/.rc
-  - which mac-setup
+  - ./mac-setup/mac-setup --test
