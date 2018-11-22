@@ -1,4 +1,8 @@
 os: osx
 language: objective-c
+before_install:
+  - ./mac-setup uninstall
+install:
+  - curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bash
 script:
-  - ./mac-setup/mac-setup --test
+  - which mac-setup
