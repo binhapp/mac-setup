@@ -22,7 +22,6 @@ echo_restart_session() {
   [ -f ~/.zshrc ] && rm ~/.zshrc
   ln -s ~/mac-setup/.mac-setuprc ~/.zshrc
   ls -la ~/.zshrc
-  source ~/mac-setup/.mac-setuprc
   echo_restart_session
 }
 --install() {
