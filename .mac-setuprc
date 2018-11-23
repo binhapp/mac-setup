@@ -5,7 +5,6 @@ alias xcode='open -a Xcode'
 alias stree='open -a SourceTree'
 alias stree!='killall Sourcetree && stree'
 alias code!='kill -9 $(pgrep Electron) && code'
-source ~/mac-setup/zsh/.zshrc
 source ~/mac-setup/brew/.brewrc
 #source ~/mac-setup/rvm/rvmrc
 #source ~/mac-setup/nvm/nvmrc

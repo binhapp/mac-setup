@@ -17,28 +17,16 @@ echo_restart_session() {
 +-----------------------------+
 '
 }
---config() {
-  echo '## config'
-  [ -f ~/.zshrc ] && rm ~/.zshrc
-  ln -s ~/mac-setup/.mac-setuprc ~/.zshrc
-  ls -la ~/.zshrc
-  echo_restart_session
-}
 --install() {
   echo '## install'
   ~/mac-setup/brew/brew --install
   ~/mac-setup/zsh/zsh --install
-  --config
+  echo_restart_session
 }
 --uninstall() {
   echo '## uninstall'
   ~/mac-setup/brew/brew --uninstall
   ~/mac-setup/zsh/zsh --uninstall
   echo_restart_session
-}
---test() {
-  echo '## test'
-  --uninstall
-  --install
 }
 $@
