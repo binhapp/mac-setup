@@ -6,7 +6,7 @@ alias stree='open -a SourceTree'
 alias stree!='killall Sourcetree && stree'
 alias code!='kill -9 $(pgrep Electron) && code'
 source ~/mac-setup/brew/.brewrc
-#source ~/mac-setup/rvm/rvmrc
+source ~/mac-setup/rvm/.rvmrc
 #source ~/mac-setup/nvm/nvmrc
 #source ~/mac-setup/python/pythonrc
 #source ~/mac-setup/powerline/powerlinerc

@@ -1,0 +1,18 @@
+#!/bin/bash
+echo '# rvm'
+--install() {
+  if [ ! "$CI" ] && [ ! -d ~/.rvm ]; then
+    echo '## install'
+    \curl -sSL https://get.rvm.io | bash -s stable --ruby
+    source ~/mac-setup/rvm/.rvmrc
+  fi
+  gem install cocoapods
+  gem install fastlane -NV
+}
+--clean() {
+  if [ ! "$CI" ]; then
+    echo '## clean'
+    [ -d ~/.rvm ] && sudo rm -rf ~/.rvm
+  fi
+}
+$@
