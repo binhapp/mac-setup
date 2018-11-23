@@ -1,5 +1,4 @@
 #!/bin/bash
-echo '# mac-setup'
 --all() {
   ~/mac-setup/rvm/rvm.sh $@
   ~/mac-setup/nvm/nvm.sh $@
@@ -18,13 +17,13 @@ echo_restart_session() {
 '
 }
 --install() {
-  echo '## install'
+  echo '# install'
   ~/mac-setup/brew/brew --install
   ~/mac-setup/zsh/zsh --install
   echo_restart_session
 }
 --uninstall() {
-  echo '## uninstall'
+  echo '# uninstall'
   ~/mac-setup/brew/brew --uninstall
   ~/mac-setup/zsh/zsh --uninstall
   echo_restart_session

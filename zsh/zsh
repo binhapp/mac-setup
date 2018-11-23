@@ -1,32 +1,27 @@
 #!/bin/bash
-echo '## zsh'
+echo '# zsh'
 --config() {
-  echo '### config'
+  echo '## config'
   [ -f ~/.zshrc ] && rm ~/.zshrc
-  ln -s ~/mac-setup/.zshrc ~/.zshrc
+  ln -s ~/mac-setup/zsh/.zshrc ~/.zshrc
   ls -la ~/.zshrc
 }
 --install() {
   if [ ! "$CI" ]; then
-    echo '### install'
+    echo '## install'
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   fi
   --config
 }
 --clean() {
-  echo '### clean'
+  echo '## clean'
   rm ~/.zshrc*
 }
 --uninstall() {
   if [ ! "$CI" ]; then
-    echo '### uninstall'
+    echo '## uninstall'
     echo y | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/uninstall.sh)"
     --clean
   fi
-}
---test() {
-  echo '### test'
-  --uninstall
-  --install
 }
 $@
