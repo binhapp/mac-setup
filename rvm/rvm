@@ -4,8 +4,8 @@ echo '# rvm'
   if [ ! "$CI" ] && [ ! -d ~/.rvm ]; then
     echo '## install'
     \curl -sSL https://get.rvm.io | bash -s stable --ruby
-    source ~/mac-setup/rvm/.rvmrc
   fi
+  rvm --version
   gem install cocoapods
   gem install fastlane -NV
 }
