@@ -2,9 +2,9 @@
 echo '# zsh'
 --config() {
   echo '## config'
-  [ -f ~/.zshrc ] && rm ~/.zshrc
+  rm ~/.zshrc
   ln -s ~/mac-setup/zsh/.zshrc ~/.zshrc
-  ls -la ~/.zshrc
+  ls -l ~/.zshrc
 }
 --install() {
   if [ ! "$CI" ]; then
@@ -15,6 +15,7 @@ echo '# zsh'
 }
 --clean() {
   echo '## clean'
+  rm -rf ~/.oh-my-zsh
   rm ~/.zshrc*
 }
 --uninstall() {
