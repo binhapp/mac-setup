@@ -1,7 +1,4 @@
 os: osx
 language: objective-c
-install:
-  - curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bash
 script:
-  - source ~/mac-setup/.mac-setuprc
-  - which mac-setup
+  - curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bash
