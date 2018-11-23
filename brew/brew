@@ -14,10 +14,10 @@ echo '## brew'
   source ~/mac-setup/brew/.brewrc
 }
 --install() {
-  if [ ! "$CI" ]; then
+  if [ ! "$CI" ] && [ ! -d ~/.homebrew ]; then
     echo '### install'
     mkdir ~/.homebrew && \
-    curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
+      curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
   fi
   --config
   which brew
