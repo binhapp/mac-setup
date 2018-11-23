@@ -1,7 +1,7 @@
 #!/bin/bash
 echo '## zsh'
 --install() {
-  if [ ! "$CI" ] && [ ! -d ~/.oh-my-zsh ]; then
+  if [ ! "$CI" ]; then
     echo '### install'
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   fi
@@ -11,7 +11,7 @@ echo '## zsh'
   rm ~/.zshrc*
 }
 --uninstall() {
-  if [ ! "$CI" ] && [ -d ~/.oh-my-zsh ] ; then
+  if [ ! "$CI" ]; then
     echo '### uninstall'
     echo y | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/uninstall.sh)"
     --clean
