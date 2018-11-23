@@ -10,8 +10,8 @@ echo '# zsh'
   if [ ! "$CI" ]; then
     echo '## install'
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    --config
   fi
-  --config
 }
 --clean() {
   echo '## clean'

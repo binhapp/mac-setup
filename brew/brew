@@ -16,10 +16,10 @@ echo '# brew'
 --install() {
   if [ ! "$CI" ] && [ ! -d ~/.homebrew ]; then
     echo '## install'
-    mkdir ~/.homebrew && \
-      curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
+    mkdir ~/.homebrew \
+    && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
+    --config
   fi
-  --config
   which brew
   brew --version
   --carthage --install
