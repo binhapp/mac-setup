@@ -38,7 +38,7 @@ not_install() {
   install() {
     if not_install rvm; then
       \curl -sSL https://get.rvm.io | bash -s stable --ruby
-      # source ~/.rvm/scripts/rvm
+      source ~/.rvm/scripts/rvm
     fi
     verify ruby
 

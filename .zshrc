@@ -7,8 +7,8 @@ export PATH=$HOME/Library/Python/2.7/bin:$PATH
 export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
 export REACT_EDITOR=code
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export PATH=$JAVA_HOME/bin:$PATH
+[ ! "$CI" ] && export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+[ ! "$CI" ] && export PATH=$JAVA_HOME/bin:$PATH
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$ANDROID_HOME/tools:$PATH
@@ -51,8 +51,8 @@ function install_powerline_precmd() {
 }
 install_powerline_precmd
 
-source $ZSH/oh-my-zsh.sh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ ! "$CI" ] && source $ZSH/oh-my-zsh.sh
+[ ! "$CI" ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Note the source command must be at the end of ~/.zshrc.
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ ! "$CI" ] && source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
