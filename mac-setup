@@ -1,33 +1,236 @@
-#!/bin/bash
---all() {
-  ~/mac-setup/rvm/rvm.sh $@
-  ~/mac-setup/nvm/nvm.sh $@
-  ~/mac-setup/python/python.sh $@
-  ~/mac-setup/z/z.sh $@
-  ~/mac-setup/iterm2/iterm2.sh $@
-  ~/mac-setup/vim/vim.sh $@
-  ~/mac-setup/vscode/vscode.sh $@
-  ~/mac-setup/gitignore/gitignore.sh $@
+#!/usr/bin/env bash
+log_installing() {
+  echo 🆕 Installing $1...
 }
-echo_restart_session() {
-  echo '
-+-----------------------------+
-| Please restart your session |
-+-----------------------------+
-'
+verify() {
+  echo ✅ `command -v $1`
 }
---install() {
-  echo '# install'
-  ~/mac-setup/brew/brew --install
-  ~/mac-setup/rvm/rvm --install
-  ~/mac-setup/zsh/zsh --install
-  echo_restart_session
+log_removing() {
+  echo ❌ Removing $1...
 }
---uninstall() {
-  echo '# uninstall'
-  ~/mac-setup/brew/brew --uninstall
-  ~/mac-setup/rvm/rvm --clean
-  ~/mac-setup/zsh/zsh --uninstall
-  echo_restart_session
+not_install() {
+  if type $1 >/dev/null 2>&1; then
+    false
+  else
+    log_installing $1
+    true
+  fi
+}
+--brew() {
+  install() {
+    if not_install brew; then
+      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+    verify brew
+
+    if not_install carthage; then
+      brew install carthage
+    fi
+    verify carthage
+  }
+  uninstall() {
+    log_removing brew
+    echo y | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+  }
+  $@
+}
+--rvm() {
+  install() {
+    if not_install rvm; then
+      \curl -sSL https://get.rvm.io | bash -s stable --ruby
+      # source ~/.rvm/scripts/rvm
+    fi
+    verify ruby
+
+    if not_install pod; then
+      gem install cocoapods
+    fi
+    verify pod
+
+    if not_install fastlane; then
+      gem install fastlane -NV
+    fi
+    verify fastlane
+  }
+  uninstall() {
+    log_removing rvm
+    rm -rf ~/.rvm
+  }
+  $@
+}
+--nvm() {
+  load_nvm() {
+    if [ -d ~/.nvm ]; then
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    else
+      export NVM_DIR=
+    fi
+  }
+  load_nvm
+
+  install() {
+    if [ ! -d ~/.nvm ]; then
+      log_installing nvm
+      curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+      load_nvm
+    fi
+
+    if not_install node; then
+      nvm install node
+    fi
+    verify node
+
+    if not_install yarn; then
+      npm install -g yarn
+    fi
+    verify yarn
+
+    if not_install appium-doctor; then
+      npm install -g appium-doctor
+    fi
+    verify appium-doctor
+
+    if not_install vmd; then
+      npm install -g vmd
+    fi
+    verify vmd
+  }
+  uninstall() {
+    log_removing nvm
+    rm -rf ~/.nvm
+  }
+  $@
+}
+--python() {
+  --pip() {
+    install() {
+      if not_install pip; then
+        curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+        python get-pip.py --user
+        rm get-pip.py
+      fi
+      verify pip
+
+      if not_install powerline-shell; then
+        pip install powerline-shell --user
+      fi
+      verify powerline-shell
+    }
+    $@
+  }
+  install() {
+    --pip install
+  }
+  $@
+}
+--zsh() {
+  install() {
+    if [ ! -d ~/.oh-my-zsh ]; then
+      log_installing zsh
+      sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    fi
+
+    if [ ! -d ~/.zsh/zsh-autosuggestions ]; then
+      log_installing 'zsh-autosuggestions'
+      git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+    fi
+
+    if [ ! -d ~/.zsh/zsh-syntax-highlighting ]; then
+      log_installing 'zsh-syntax-highlighting'
+      git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+      echo "source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+    fi
+  }
+  uninstall() {
+    if [ -d ~/.oh-my-zsh ]; then
+      log_removing zsh
+      rm -rf ~/.oh-my-zsh
+      rm -rf ~/.zsh
+      rm ~/.zshrc*
+    fi
+  }
+  $@
+}
+config() {
+  vim() {
+    rm ~/.vimrc
+    ln -s ~/mac-setup/.vimrc ~/.vimrc
+    ls -g ~/.vimrc
+  }
+  gitignore_global() {
+    rm ~/.gitignore_global
+    ln -s ~/mac-setup/.gitignore_global ~/.gitignore_global
+    ls -g ~/.gitignore_global
+  }
+  zsh() {
+    rm ~/.zshrc
+    ln -s ~/mac-setup/.zshrc ~/.zshrc
+    ls -g ~/.zshrc
+  }
+  powerline-shell() {
+    mkdir -p ~/.config/powerline-shell
+    rm ~/.config/powerline-shell/config.json
+    ln -s ~/mac-setup/powerline-shell/config.json ~/.config/powerline-shell/config.json
+    ls -g ~/.config/powerline-shell/config.json
+  }
+  gem() {
+    rm ~/.gemrc
+    ln -s ~/mac-setup/.gemrc ~/.gemrc
+    ls -lg ~/.gemrc
+  }
+  vmd() {
+    rm ~/.vmdrc
+    ln -s ~/mac-setup/.vmdrc ~/.vmdrc
+    ls -g ~/.vmdrc
+  }
+  vscode() {
+    if [ -d ~/Library/Application\ Support/Code/User ]; then
+      rm ~/Library/Application\ Support/Code/User/settings.json 
+      rm ~/Library/Application\ Support/Code/User/keybindings.json
+      ln -s ~/mac-setup/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+      ln -s ~/mac-setup/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+      ls -g ~/Library/Application\ Support/Code/User/*.json
+    fi
+  }
+  vim
+  gitignore_global
+  zsh
+  powerline-shell
+  gem
+  vmd
+  vscode
+}
+update() {
+  if [ -d ~/mac-setup ]; then
+    cd ~/mac-setup
+    git pull
+    cd --
+  else
+    git clone https://github.com/blcsntb/mac-setup ~/mac-setup
+  fi
+}
+install() {
+  update
+  --brew install
+  --rvm install
+  --nvm install
+  --python install
+  --zsh install
+  config
+}
+uninstall() {
+  if [ ! "$CI" ]; then
+    --brew uninstall
+    --rvm uninstall
+    --nvm uninstall
+    --python uninstall
+    --zsh uninstall
+  fi
+}
+reinstall() {
+  update
+  uninstall
+  install
 }
 $@

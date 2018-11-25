@@ -9,7 +9,7 @@
 # Command-line interface
 
 ```
-curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/install.sh | bash
+curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup | bash -s install && source ~/.zshrc
 ```
 
 - zsh
