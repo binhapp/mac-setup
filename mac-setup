@@ -51,6 +51,11 @@ not_install() {
       gem install fastlane -NV
     fi
     verify fastlane
+
+    if not_install travis; then
+      gem install travis -v 1.8.9 --no-rdoc --no-ri
+    fi
+    verify travis
   }
   uninstall() {
     log_removing rvm
@@ -216,7 +221,9 @@ install() {
   --rvm install
   --nvm install
   --python install
-  --zsh install
+  if [ ! "$CI" ]; then
+    --zsh install
+  fi
   config
 }
 uninstall() {
