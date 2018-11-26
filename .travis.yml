@@ -1,6 +1,6 @@
 os: osx
 language: objective-c
 install:
-  - curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup | bash && source ~/.zshrc
+  - curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup | bash
 script:
   - ~/mac-setup/mac-setup
