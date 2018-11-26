@@ -108,6 +108,7 @@ not_install() {
   $@
 }
 --python() {
+  export PATH=$HOME/Library/Python/2.7/bin:$PATH
   --pip() {
     install() {
       if not_install pip; then
