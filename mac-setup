@@ -219,9 +219,9 @@ update() {
 install() {
   update
   --brew install
+  --python install
   --rvm install
   --nvm install
-  --python install
   if [ ! "$CI" ]; then
     --zsh install
   fi
@@ -230,9 +230,9 @@ install() {
 uninstall() {
   if [ ! "$CI" ]; then
     --brew uninstall
+    --python uninstall
     --rvm uninstall
     --nvm uninstall
-    --python uninstall
     --zsh uninstall
   fi
 }
