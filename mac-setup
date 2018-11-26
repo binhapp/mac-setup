@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 log_installing() {
-  echo 🆕 Installing $1...
+  echo ❌ Installing $1...
 }
 verify() {
   echo ✅ `command -v $1`
 }
-log_removing() {
-  echo ❌ Removing $1...
+log_uninstalling() {
+  echo Uninstalling $1...
 }
 not_install() {
   if type $1 >/dev/null 2>&1; then
@@ -29,7 +29,7 @@ not_install() {
     verify carthage
   }
   uninstall() {
-    log_removing brew
+    log_uninstalling brew
     echo y | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
   }
   $@
@@ -58,7 +58,7 @@ not_install() {
     verify travis
   }
   uninstall() {
-    log_removing rvm
+    log_uninstalling rvm
     rm -rf ~/.rvm
   }
   $@
@@ -102,7 +102,7 @@ not_install() {
     verify vmd
   }
   uninstall() {
-    log_removing nvm
+    log_uninstalling nvm
     rm -rf ~/.nvm
   }
   $@
@@ -128,6 +128,10 @@ not_install() {
   install() {
     --pip install
   }
+  uninstall() {
+    log_uninstalling python
+    rm -rf ~/Library/Python
+  }
   $@
 }
 --zsh() {
@@ -150,7 +154,7 @@ not_install() {
   }
   uninstall() {
     if [ -d ~/.oh-my-zsh ]; then
-      log_removing zsh
+      log_uninstalling zsh
       rm -rf ~/.oh-my-zsh
       rm -rf ~/.zsh
       rm ~/.zshrc*
