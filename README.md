@@ -1,21 +1,23 @@
 [![Build Status](https://travis-ci.org/blcsntb/mac-setup.svg?branch=master)](https://travis-ci.org/blcsntb/mac-setup)
 
-# Applications
+# Getting Started
 
-- [iTerm2](https://www.iterm2.com/downloads.html)
-- Xcode
-- [Android Studio](https://developer.android.com/studio/)
+## Install
 
-# Command-line interface
+Install the latest Xcode command line tools:
 
 ```
-curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup | bash -s install && source ~/.zshrc
+xcode-select --install
 ```
 
-- zsh
-- rvm
-	- ruby
-		- pod
-		- fastlane
-- brew
-- nvm
+Install *mac-setup* using curl
+
+```
+curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup | bash && source ~/.zshrc
+```
+
+## Update
+
+```
+mac-setup
+```

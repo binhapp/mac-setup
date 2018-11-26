@@ -241,4 +241,8 @@ reinstall() {
   uninstall
   install
 }
-$@
+if [ "$1" == "" ]; then
+  install
+else
+  $@
+fi

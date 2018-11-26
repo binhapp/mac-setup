@@ -24,9 +24,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-alias mac-setup='~/mac-setup/mac-setup'
-alias mac-setup-install='cat ~/mac-setup/mac-setup | bash -s install && source ~/.zshrc'
-alias mac-setup-reinstall='cat ~/mac-setup/mac-setup | bash -s reinstall && source ~/.zshrc'
+alias mac-setup='~/mac-setup/mac-setup && source ~/.zshrc'
 
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
