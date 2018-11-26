@@ -231,20 +231,6 @@ install() {
   fi
   config
 }
-uninstall() {
-  if [ ! "$CI" ]; then
-    --brew uninstall
-    --python uninstall
-    --rvm uninstall
-    --nvm uninstall
-    --zsh uninstall
-  fi
-}
-reinstall() {
-  update
-  uninstall
-  install
-}
 if [ "$1" == "" ]; then
   install
 else
