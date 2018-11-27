@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/blcsntb/mac-setup.svg?branch=master)](https://travis-ci.org/blcsntb/mac-setup)
 
+![](./iterm2.png)
+
 # Getting Started
 
 ## Install
