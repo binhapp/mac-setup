@@ -162,6 +162,15 @@ not_install() {
   }
   $@
 }
+--iterm2() {
+  install() {
+    if [ -d /Applications/iTerm.app ]; then
+      log_installing iterm2
+      brew cask install iterm2
+    fi
+  }
+  $@
+}
 config() {
   vim() {
     rm ~/.vimrc
@@ -194,6 +203,15 @@ config() {
     ln -s ~/mac-setup/.vmdrc ~/.vmdrc
     ls -g ~/.vmdrc
   }
+  fonts() {
+    cd ~/Library/Fonts
+    [ ! -f "Meslo LG M Regular for Powerline.ttf" ] && \
+      curl https://raw.githubusercontent.com/powerline/fonts/master/Meslo%20Slashed/Meslo%20LG%20M%20Regular%20for%20Powerline.ttf > "Meslo LG M Regular for Powerline.ttf"
+    cd --
+  }
+  iterm2() {
+    cp ~/mac-setup/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+  }
   vscode() {
     if [ -d ~/Library/Application\ Support/Code/User ]; then
       rm ~/Library/Application\ Support/Code/User/settings.json 
@@ -209,6 +227,8 @@ config() {
   powerline-shell
   gem
   vmd
+  fonts
+  iterm
   vscode
 }
 update() {
@@ -229,6 +249,7 @@ install() {
   if [ ! "$CI" ]; then
     --zsh install
   fi
+  --iterm2 install
   config
 }
 if [ "$1" == "" ]; then
