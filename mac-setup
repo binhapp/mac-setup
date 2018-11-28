@@ -164,7 +164,7 @@ not_install() {
 }
 --iterm2() {
   install() {
-    if [ -d /Applications/iTerm.app ]; then
+    if [ ! -d /Applications/iTerm.app ]; then
       log_installing iterm2
       brew cask install iterm2
     fi
@@ -196,7 +196,7 @@ config() {
   gem() {
     rm ~/.gemrc
     ln -s ~/mac-setup/.gemrc ~/.gemrc
-    ls -lg ~/.gemrc
+    ls -g ~/.gemrc
   }
   vmd() {
     rm ~/.vmdrc
@@ -228,7 +228,7 @@ config() {
   gem
   vmd
   fonts
-  iterm
+  iterm2
   vscode
 }
 update() {
