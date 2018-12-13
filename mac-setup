@@ -212,6 +212,12 @@ config() {
   iterm2() {
     cp ~/mac-setup/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
   }
+  spectacle() {
+    mkdir -p ~/Library/Application\ Support/Spectacle
+    rm ~/Library/Application\ Support/Spectacle/Shortcuts.json
+    ln -s ~/mac-setup/spectacle/Shortcuts.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
+    ls -g ~/Library/Application\ Support/Spectacle/Shortcuts.json
+  }
   vscode() {
     if [ -d ~/Library/Application\ Support/Code/User ]; then
       rm ~/Library/Application\ Support/Code/User/settings.json 
@@ -229,6 +235,7 @@ config() {
   vmd
   fonts
   iterm2
+  spectacle
   vscode
 }
 update() {
