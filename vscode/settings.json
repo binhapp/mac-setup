@@ -1,4 +1,7 @@
 {
+  "cucumberautocomplete.steps": ["features/step_definitions/*.js"],
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "cucumberautocomplete.syncfeatures": "features/*feature",
   "editor.detectIndentation": false,
   "editor.fontSize": 12,
   "editor.minimap.enabled": false,
@@ -10,5 +13,6 @@
   "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
   "terminal.integrated.fontSize": 12,
   "vim.foldfix": true,
+  "window.title": "${activeEditorMedium}",
   "window.zoomLevel": 0
 }
