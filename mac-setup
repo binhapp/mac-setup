@@ -19,7 +19,8 @@ not_install() {
 --brew() {
   install() {
     if not_install brew; then
-      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      mkdir ~/.homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
+      export PATH=$HOME/.homebrew/bin:$PATH
     fi
     verify brew
 
@@ -34,13 +35,17 @@ not_install() {
   }
   $@
 }
---rvm() {
+--rbenv() {
   install() {
-    if not_install rvm; then
-      \curl -sSL https://get.rvm.io | bash -s stable --ruby
-      source ~/.rvm/scripts/rvm
+    if not_install rbenv; then
+      brew install rbenv
+      rbenv init
+      rbenv install 2.2.4
+      rbenv local 2.2.4
     fi
+    verify rbenv
     verify ruby
+    verify gem
 
     if not_install pod; then
       gem install cocoapods
@@ -56,10 +61,6 @@ not_install() {
       gem install travis -v 1.8.9 --no-rdoc --no-ri
     fi
     verify travis
-  }
-  uninstall() {
-    log_uninstalling rvm
-    rm -rf ~/.rvm
   }
   $@
 }
@@ -251,7 +252,7 @@ install() {
   update
   --brew install
   --python install
-  --rvm install
+  --rbenv install
   --nvm install
   if [ ! "$CI" ]; then
     --zsh install
