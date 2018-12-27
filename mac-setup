@@ -109,25 +109,17 @@ not_install() {
   $@
 }
 --python() {
-  export PATH=$HOME/Library/Python/2.7/bin:$PATH
-  --pip() {
-    install() {
-      if not_install pip; then
-        curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-        python get-pip.py --user
-        rm get-pip.py
-      fi
-      verify pip
-
-      if not_install powerline-shell; then
-        pip install powerline-shell --user
-      fi
-      verify powerline-shell
-    }
-    $@
-  }
   install() {
-    --pip install
+    if not_install python3; then
+      brew install python
+    fi
+    verify python3
+    verify pip3
+
+    if not_install powerline-shell; then
+      pip3 install powerline-shell --user
+    fi
+    verify powerline-shell
   }
   uninstall() {
     log_uninstalling python

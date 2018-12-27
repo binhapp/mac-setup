@@ -4,8 +4,6 @@ export ZSH=~/.oh-my-zsh
 
 export PATH=$HOME/.homebrew/bin:$PATH
 
-export PATH=$HOME/Library/Python/2.7/bin:$PATH
-
 export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
 export REACT_EDITOR=code
 
