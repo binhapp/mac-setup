@@ -34,6 +34,8 @@ alias code!='kill -9 $(pgrep Electron) && code'
 alias stree='open -a SourceTree'
 alias stree!='killall Sourcetree && stree'
 
+alias gff='git flow feature'
+
 function powerline_precmd() {
   PS1="$(powerline-shell --shell zsh $?)"
 }
