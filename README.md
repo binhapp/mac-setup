@@ -15,7 +15,7 @@ xcode-select --install
 Install *mac-setup* using curl
 
 ```
-curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup | bash && source ~/.zshrc
+curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup | bash -s all && source ~/.zshrc
 ```
 
 ## Update

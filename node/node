@@ -1,0 +1,57 @@
+#!/bin/bash
+
+source ~/mac-setup/mac-setup
+
+load_nvm() {
+  if [ -d ~/.nvm ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  else
+    export NVM_DIR=
+  fi
+}
+
+load_nvm
+
+install() {
+  if [ ! -d ~/.nvm ]; then
+    log_installing nvm
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+    load_nvm
+  fi
+
+  if not_install node; then
+    nvm install node
+  fi
+  verify node
+
+  if not_install yarn; then
+    npm install -g yarn
+  fi
+  verify yarn
+
+  if not_install appium-doctor; then
+    npm install -g appium-doctor
+  fi
+  verify appium-doctor
+
+  if not_install vmd; then
+    npm install -g vmd
+  fi
+  verify vmd
+}
+
+uninstall() {
+  log_uninstalling nvm
+  rm -rf ~/.nvm
+}
+
+all() {
+  install
+}
+
+if [ "$1" == "" ]; then
+  all
+else
+  eval $@
+fi
