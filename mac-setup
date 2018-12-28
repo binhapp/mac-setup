@@ -17,10 +17,10 @@ not_install() {
   fi
 }
 --brew() {
+  export PATH=$HOME/.homebrew/bin:$PATH
   install() {
     if not_install brew; then
       mkdir ~/.homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
-      export PATH=$HOME/.homebrew/bin:$PATH
     fi
     verify brew
 
@@ -36,6 +36,7 @@ not_install() {
   $@
 }
 --rbenv() {
+  eval "$(rbenv init -)"
   install() {
     if not_install rbenv; then
       brew install rbenv
