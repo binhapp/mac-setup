@@ -59,9 +59,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>569 282 1016 512 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1080 0 0 1920 1080 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1920 -160 1920 1080 1920 -160 1920 1080 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>0 0 1920 1080 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>268 14 650 527 0 0 1920 1080 </string>
 	<key>New Bookmarks</key>
