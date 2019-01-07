@@ -156,7 +156,8 @@ config() {
   spectacle
   vscode
 }
-update() {
+
+clone_or_pull() {
   if [ -d ~/mac-setup ]; then
     cd ~/mac-setup
     git pull
@@ -171,7 +172,6 @@ run() {
 }
 
 all() {
-  update
   run brew install
   --python install
   --rbenv install
@@ -182,6 +182,8 @@ all() {
   --iterm2 install
   config
 }
+
+clone_or_pull
 
 if [ "$1" == "all" ]; then
   all
