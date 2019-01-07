@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source ~/mac-setup/lib
-
 --rbenv() {
   eval "$(rbenv init -)"
   install() {
@@ -184,6 +182,7 @@ all() {
 }
 
 clone_or_pull
+source ~/mac-setup/lib
 
 if [ "$1" == "all" ]; then
   all
