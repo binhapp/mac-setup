@@ -1,41 +1,7 @@
 #!/bin/bash
 
-log_installing() {
-  echo ❌ Installing $1...
-}
-verify() {
-  echo ✅ `command -v $1`
-}
-log_uninstalling() {
-  echo Uninstalling $1...
-}
-not_install() {
-  if type $1 >/dev/null 2>&1; then
-    false
-  else
-    log_installing $1
-    true
-  fi
-}
---brew() {
-  export PATH=$HOME/.homebrew/bin:$PATH
-  install() {
-    if not_install brew; then
-      mkdir ~/.homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
-    fi
-    verify brew
+source ~/mac-setup/lib
 
-    if not_install carthage; then
-      brew install carthage
-    fi
-    verify carthage
-  }
-  uninstall() {
-    log_uninstalling brew
-    echo y | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
-  }
-  $@
-}
 --rbenv() {
   eval "$(rbenv init -)"
   install() {
@@ -206,10 +172,10 @@ run() {
 
 all() {
   update
-  --brew install
+  run brew install
   --python install
   --rbenv install
-  run node
+  run node install
   if [ ! "$CI" ]; then
     --zsh install
   fi

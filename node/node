@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/mac-setup/mac-setup
+source ~/mac-setup/lib
 
 load_nvm() {
   if [ -d ~/.nvm ]; then
@@ -29,16 +29,6 @@ install() {
     npm install -g yarn
   fi
   verify yarn
-
-  if not_install appium-doctor; then
-    npm install -g appium-doctor
-  fi
-  verify appium-doctor
-
-  if not_install vmd; then
-    npm install -g vmd
-  fi
-  verify vmd
 }
 
 uninstall() {
@@ -46,12 +36,4 @@ uninstall() {
   rm -rf ~/.nvm
 }
 
-all() {
-  install
-}
-
-if [ "$1" == "" ]; then
-  all
-else
-  eval $@
-fi
+$@
