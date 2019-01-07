@@ -1,17 +1,5 @@
 #!/bin/bash
 
-log_installing() {
-  echo ❌ installing $1...
-}
-
-verify() {
-  echo ✅ `command -v $1`
-}
-
-log_uninstalling() {
-  echo uninstalling $1...
-}
-
 not_install() {
   if type $1 >/dev/null 2>&1; then
     false
@@ -19,4 +7,20 @@ not_install() {
     log_installing $1
     true
   fi
+}
+
+log_installing() {
+  echo ❌ installing $1...
+}
+
+log_installed() {
+  echo ✅ $1
+}
+
+verify() {
+  log_installed `command -v $1`
+}
+
+log_uninstalling() {
+  echo uninstalling $1...
 }

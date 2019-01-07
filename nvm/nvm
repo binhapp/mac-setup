@@ -1,5 +1,3 @@
-#!/bin/bash
-
 source ~/mac-setup/lib
 
 load_nvm() {
@@ -19,16 +17,7 @@ install() {
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
     load_nvm
   fi
-
-  if not_install node; then
-    nvm install node
-  fi
-  verify node
-
-  if not_install yarn; then
-    npm install -g yarn
-  fi
-  verify yarn
+  log_installed $NVM_DIR
 }
 
 uninstall() {

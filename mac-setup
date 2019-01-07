@@ -175,7 +175,7 @@ all() {
   run brew install
   --python install
   --rbenv install
-  run node install
+  run nvm install
   if [ ! "$CI" ]; then
     --zsh install
   fi
