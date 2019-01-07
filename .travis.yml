@@ -3,4 +3,4 @@ language: objective-c
 install:
   - curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup | bash -s all
 script:
-  - ~/mac-setup/mac-setup
+  - ~/mac-setup/mac-setup all

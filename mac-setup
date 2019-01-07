@@ -1,36 +1,5 @@
 #!/bin/bash
 
---rbenv() {
-  eval "$(rbenv init -)"
-  install() {
-    if not_install rbenv; then
-      brew install rbenv
-      rbenv init
-      rbenv install 2.2.4
-      rbenv local 2.2.4
-    fi
-    verify rbenv
-    verify ruby
-    verify gem
-
-    if not_install pod; then
-      gem install cocoapods
-    fi
-    verify pod
-
-    if not_install fastlane; then
-      gem install fastlane -NV
-    fi
-    verify fastlane
-
-    if not_install travis; then
-      gem install travis -v 1.8.9 --no-rdoc --no-ri
-    fi
-    verify travis
-  }
-  $@
-}
-
 --python() {
   install() {
     if not_install python3; then
@@ -172,7 +141,7 @@ run() {
 all() {
   run brew install
   --python install
-  --rbenv install
+  run rbenv install
   run nvm install
   if [ ! "$CI" ]; then
     --zsh install

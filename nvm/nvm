@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source ~/mac-setup/lib
 
 load_nvm() {

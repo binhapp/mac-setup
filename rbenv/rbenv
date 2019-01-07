@@ -1,0 +1,22 @@
+#!/bin/bash
+
+source ~/mac-setup/lib
+
+eval "$(rbenv init -)"
+
+install() {
+  if not_install rbenv; then
+    brew install rbenv
+    rbenv init
+  fi
+
+  if [ $(which ruby) == '/usr/bin/ruby' ]; then
+    log_installing ruby
+    rbenv install 2.2.4
+    rbenv local 2.2.4
+  fi
+  verify ruby
+  verify gem
+}
+
+$@
