@@ -12,8 +12,8 @@ install() {
 
   if [ $(which ruby) == '/usr/bin/ruby' ]; then
     log_installing ruby
-    rbenv install 2.2.4
-    rbenv local 2.2.4
+    rbenv install 2.3.0
+    rbenv local 2.3.0
   fi
   verify ruby
   verify gem
