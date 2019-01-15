@@ -17,6 +17,16 @@ install() {
   fi
   verify ruby
   verify gem
+
+  if not_install pod; then
+    gem install cocoapods --quiet
+  fi
+  verify pod
+
+  if not_install fastlane; then
+    gem install fastlane -NV --quiet
+  fi
+  verify fastlane
 }
 
 $@
