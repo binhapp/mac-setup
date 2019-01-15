@@ -44,7 +44,7 @@
     "shortcut_name" : "MoveToPreviousDisplay"
   },
   {
-    "shortcut_key_binding" : "alt+cmd+f",
+    "shortcut_key_binding" : "ctrl+alt+cmd+f",
     "shortcut_name" : "MoveToFullscreen"
   },
   {
@@ -56,7 +56,7 @@
     "shortcut_name" : "MoveToLeftHalf"
   },
   {
-    "shortcut_key_binding" : "alt+cmd+c",
+    "shortcut_key_binding" : "ctrl+alt+cmd+c",
     "shortcut_name" : "MoveToCenter"
   },
   {
