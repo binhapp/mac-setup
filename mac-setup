@@ -9,7 +9,7 @@
     verify pip3
 
     if not_install powerline-shell; then
-      pip3 install powerline-shell --user
+      pip3 install powerline-shell
     fi
     verify powerline-shell
   }
