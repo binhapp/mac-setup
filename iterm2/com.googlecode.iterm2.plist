@@ -12,7 +12,17 @@
 	<string>manual</string>
 	<key>Default Bookmark Guid</key>
 	<string>C0FA1836-5A6D-46D9-9D1F-C4BF6FEF9044</string>
+	<key>HideActivityIndicator</key>
+	<false/>
+	<key>HideTab</key>
+	<false/>
+	<key>HideTabCloseButton</key>
+	<true/>
+	<key>HideTabNumber</key>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
+	<key>JobName</key>
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
@@ -730,7 +740,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MesloLGMForPowerline-Regular 14</string>
+			<string>MesloLGMForPowerline-Regular 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -742,7 +752,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>10000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -776,7 +786,7 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -860,7 +870,21 @@
 	<date>2018-11-26T01:26:50Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>ShowBookmarkName</key>
+	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<true/>
+	<key>ShowNewOutputIndicator</key>
+	<true/>
+	<key>StretchTabsToFillBar</key>
+	<true/>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>1</integer>
+	<key>WordCharacters</key>
+	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.5</string>
+	<string>3.2.6</string>
 </dict>
 </plist>
