@@ -28,8 +28,7 @@ alias restree='killall Sourcetree && stree'
 alias gff='git flow feature'
 
 function powerline_precmd() {
-  PS1="$(powerline-shell --shell zsh $?)
-▶︎ "
+  PS1="$(powerline-shell --shell zsh $?)"
 }
 function install_powerline_precmd() {
   for s in "${precmd_functions[@]}"; do
