@@ -12,6 +12,5 @@
   "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
   "terminal.integrated.fontSize": 14,
   "vim.foldfix": true,
-  "window.title": "${activeEditorMedium}",
   "window.zoomLevel": -1,
 }
