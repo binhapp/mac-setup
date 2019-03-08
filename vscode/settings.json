@@ -1,11 +1,4 @@
 {
-  "cucumberautocomplete.steps": [ "features/step_definitions/*.js" ],
-  "cucumberautocomplete.strictGherkinCompletion": true,
-  "cucumberautocomplete.syncfeatures": "features/*feature",
-  "cucumberautocomplete.formatConfOverride": {
-    "And": 3,
-    "But": "relative",
-  },
   "editor.detectIndentation": false,
   "editor.fontSize": 14,
   "editor.minimap.enabled": false,
@@ -13,11 +6,12 @@
   "editor.wordWrap": "on",
   "editor.wrappingIndent": "indent",
   "extensions.ignoreRecommendations": true,
+  "javascript.preferences.quoteStyle": "single",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
   "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
   "terminal.integrated.fontSize": 14,
   "vim.foldfix": true,
   "window.title": "${activeEditorMedium}",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": -1,
 }
