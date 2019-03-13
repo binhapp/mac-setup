@@ -142,10 +142,10 @@ all() {
   config
 }
 
-clone_or_pull
 source ~/mac-setup/lib
 
 if [ "$1" == "all" ]; then
+  clone_or_pull
   all
 elif [ ! "$1" == "" ]; then
   run $@

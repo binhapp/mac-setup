@@ -21,5 +21,5 @@ curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup | bash
 ## Update
 
 ```
-mac-setup
+mac-update
 ```

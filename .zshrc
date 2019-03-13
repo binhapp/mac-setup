@@ -22,7 +22,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export MAC_SETUP_DIR="$HOME/mac-setup"
 
-alias mac-setup='~/mac-setup/mac-setup all && source ~/.zshrc'
+alias mac='~/mac-setup/mac-setup'
+alias mac-update='mac all && source ~/.zshrc'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
 alias xcode='open -a Xcode'

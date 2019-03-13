@@ -1,5 +1,9 @@
 #!/bin/bash
 
+error_log() {
+  echo ❌ $1
+}
+
 not_install() {
   if type $1 >/dev/null 2>&1; then
     false
@@ -10,7 +14,7 @@ not_install() {
 }
 
 log_installing() {
-  echo ❌ installing $1...
+  error_log installing $1...
 }
 
 log_installed() {
@@ -23,4 +27,13 @@ verify() {
 
 log_uninstalling() {
   echo uninstalling $1...
+}
+
+validate_environment_variable() {
+  name=$1
+  val=$(printenv | grep $name= | sed -e s/$name=//g)
+  if [[ -z "$val" ]]; then
+    error_log "Miss environment variable $name. Please export it."
+    exit 2
+  fi
 }
