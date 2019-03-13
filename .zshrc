@@ -14,7 +14,6 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/tools/bin:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
-export EMULATOR=$ANDROID_HOME/tools/emulator
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -24,6 +23,7 @@ export MAC_SETUP_DIR="$HOME/mac-setup"
 
 alias mac='~/mac-setup/mac-setup'
 alias mac-update='mac all && source ~/.zshrc'
+alias emulator=$ANDROID_HOME/tools/emulator
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
 alias xcode='open -a Xcode'
@@ -52,4 +52,3 @@ source $MAC_SETUP_DIR/vscode/.vscode
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(rbenv init -)"
-
