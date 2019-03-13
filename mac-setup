@@ -60,33 +60,33 @@ config() {
   vim() {
     rm ~/.vimrc
     ln -s ~/mac-setup/.vimrc ~/.vimrc
-    ls -g ~/.vimrc
+    readlink ~/.vimrc
   }
   gitignore_global() {
     rm ~/.gitignore_global
     ln -s ~/mac-setup/.gitignore_global ~/.gitignore_global
-    ls -g ~/.gitignore_global
+    readlink ~/.gitignore_global
   }
   zsh() {
     rm ~/.zshrc
     ln -s ~/mac-setup/.zshrc ~/.zshrc
-    ls -g ~/.zshrc
+    readlink ~/.zshrc
   }
   powerline-shell() {
     mkdir -p ~/.config/powerline-shell
     rm ~/.config/powerline-shell/config.json
     ln -s ~/mac-setup/powerline-shell/config.json ~/.config/powerline-shell/config.json
-    ls -g ~/.config/powerline-shell/config.json
+    readlink ~/.config/powerline-shell/config.json
   }
   gem() {
     rm ~/.gemrc
     ln -s ~/mac-setup/.gemrc ~/.gemrc
-    ls -g ~/.gemrc
+    readlink ~/.gemrc
   }
   vmd() {
     rm ~/.vmdrc
     ln -s ~/mac-setup/.vmdrc ~/.vmdrc
-    ls -g ~/.vmdrc
+    readlink ~/.vmdrc
   }
   iterm2() {
     cp ~/mac-setup/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
@@ -95,7 +95,7 @@ config() {
     mkdir -p ~/Library/Application\ Support/Spectacle
     rm ~/Library/Application\ Support/Spectacle/Shortcuts.json
     ln -s ~/mac-setup/spectacle/Shortcuts.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
-    ls -g ~/Library/Application\ Support/Spectacle/Shortcuts.json
+    readlink ~/Library/Application\ Support/Spectacle/Shortcuts.json
   }
   vscode() {
     if [ -d ~/Library/Application\ Support/Code/User ]; then
@@ -103,7 +103,7 @@ config() {
       rm ~/Library/Application\ Support/Code/User/keybindings.json
       ln -s ~/mac-setup/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
       ln -s ~/mac-setup/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-      ls -g ~/Library/Application\ Support/Code/User/*.json
+      readlink ~/Library/Application\ Support/Code/User/*.json
     fi
   }
   vim
