@@ -2,3 +2,4 @@
 .DS_Store
 *.swp
 e2e
+.jenkins.env
