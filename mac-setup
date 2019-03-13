@@ -120,9 +120,7 @@ config() {
 
 clone_or_pull() {
   if [ -d ~/mac-setup ]; then
-    cd ~/mac-setup
-    git pull
-    cd --
+    (cd ~/mac-setup; git add . && git stash --quiet && git pull)
   else
     git clone https://github.com/blcsntb/mac-setup ~/mac-setup
   fi
