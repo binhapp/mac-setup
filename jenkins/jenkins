@@ -4,11 +4,12 @@ source ~/mac-setup/lib
 
 [[ -e .jenkins.env ]] && source .jenkins.env
 
-validate_environment_variable JENKINS_USER
+validate_environment_variable JENKINS_HOST
 validate_environment_variable JENKINS_PORT
+validate_environment_variable JENKINS_USER
 
 command=$2
 job=$1
 shift 2
 
-ssh -l $JENKINS_USER -p $JENKINS_PORT localhost $command $job $@
+ssh -l $JENKINS_USER -p $JENKINS_PORT $JENKINS_HOST $command $job $@
