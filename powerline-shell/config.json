@@ -14,8 +14,7 @@
   ],
   "mode": "flat",
   "cwd": {
-    "mode": "plain",
-    "max_depth": 1
+    "mode": "plain"
   },
   "theme": "default"
 }
