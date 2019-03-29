@@ -1,20 +1,18 @@
 {
   "segments": [
-    "virtual_env",
-    "aws_profile",
+    "set_term_title",
+    "time",
+    "git_stash",
+    "git",
+    "newline",
     "ssh",
     "cwd",
-    "git",
-    "git_stash",
-    "jobs",
-    "set_term_title",
-    "svn",
-    "newline",
-    "root"
+    "jobs"
   ],
   "mode": "flat",
   "cwd": {
-    "mode": "plain"
+    "mode": "plain",
+    "max_depth": 1
   },
   "theme": "default"
 }
