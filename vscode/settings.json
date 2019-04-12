@@ -4,7 +4,7 @@
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
-  "editor.wrappingIndent": "indent",
+  "editor.wrappingIndent": "none",
   "extensions.ignoreRecommendations": true,
   "javascript.preferences.quoteStyle": "single",
   "javascript.updateImportsOnFileMove.enabled": "always",
