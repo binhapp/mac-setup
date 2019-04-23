@@ -1,4 +1,11 @@
 os: osx
 language: objective-c
+install:
+  - ./bin/install
 script:
   - ./bin/install
+cache:
+  directories:
+    - /Applications
+    - $HOME/.homebrew
+    - $HOME/.nvm
