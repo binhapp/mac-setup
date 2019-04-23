@@ -1,5 +1,0 @@
-export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
-export REACT_EDITOR=code
-
-alias vscode='code'
-alias revscode='pgrep Electron | xargs kill && code'

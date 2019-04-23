@@ -2,12 +2,15 @@
 set -e
 
 # install brew
-[ -d ~/.homebrew ] || (mkdir ~/.homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew)
+[ -d ~/.homebrew ] || mkdir ~/.homebrew
+curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
 export PATH=$HOME/.homebrew/bin:$PATH
 type brew
 
 # install nvm
-[ -d ~/.nvm ] || (curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash)
+if [ ! -d ~/.nvm ]; then
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+fi
 \. ~/.nvm/nvm.sh
 nvm install --lts
 
@@ -47,3 +50,9 @@ pip3 install powerline-shell
 type npm
 npm install -g yarn
 npm install -g vmd
+
+# install oh-my-zsh
+if [ ! -d ~/.oh-my-zsh ]; then
+  git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+  sudo chsh -s ~/.homebrew/bin/zsh
+fi

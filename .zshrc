@@ -7,6 +7,9 @@ export LANG=en_US.UTF-8
 
 export PATH=$HOME/.homebrew/bin:$PATH
 
+export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
+export REACT_EDITOR=code
+
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH=$JAVA_HOME/bin:$PATH
 
@@ -19,8 +22,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export MAC_SETUP_DIR="$HOME/mac-setup"
-
 alias mac='~/mac-setup/mac-setup'
 alias mac-update='mac all && source ~/.zshrc'
 alias emulator=$ANDROID_HOME/tools/emulator
@@ -30,6 +31,8 @@ alias xcode='open -a Xcode'
 alias stree='open -a SourceTree'
 alias restree='killall Sourcetree && stree'
 alias gff='git flow feature'
+alias vscode='code'
+alias revscode='pgrep Electron | xargs kill && code'
 
 function powerline_precmd() {
   PS1="$(powerline-shell --shell zsh $?)"
@@ -45,10 +48,8 @@ function install_powerline_precmd() {
 install_powerline_precmd
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $MAC_SETUP_DIR/vscode/.vscode
-
-# Note the source command must be at the end of ~/.zshrc.
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fpath=(~/.homebrew/share/zsh-completions $fpath)
 
 eval "$(rbenv init -)"
