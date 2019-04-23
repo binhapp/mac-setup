@@ -1,0 +1,35 @@
+#!/bin/bash
+set -e
+
+[ -d ~/.homebrew ] || (mkdir ~/.homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew)
+export PATH=$HOME/.homebrew/bin:$PATH
+
+type brew
+echo "
+  git
+  python
+  rbenv
+  tree
+  watchman
+  zsh
+  zsh-autosuggestions
+  zsh-completions
+  zsh-syntax-highlighting
+" | xargs brew install
+
+echo "
+  alfred
+  android-studio
+  calibre
+  google-chrome
+  iterm2
+  skype
+  slack
+  spectacle
+  spotify
+  sourcetree
+  visual-studio-code
+" | xargs -L1 brew cask install
+
+type pip3
+pip3 install powerline-shell
