@@ -1,52 +1,35 @@
 #!/bin/bash
 set -e
 
-# install brew
-[ -d ~/.homebrew ] || mkdir ~/.homebrew
-curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
-export PATH=$HOME/.homebrew/bin:$PATH
+# load nvm
+\. ~/.nvm/nvm.sh
+
+# load rvm
+source /Users/blcsntb/.rvm/scripts/rvm
+
+# verify
+brew --version
+nvm --version
+rvm --version
+
 type brew
+brew cask install alfred
+brew cask install android-studio
+brew cask install calibre
+brew cask install google-chrome
+brew cask install iterm2
+brew cask install skype
+brew cask install slack
+brew cask install sourcetree
+brew cask install spectacle
+brew cask install spotify
+brew cask install visual-studio-code
+brew install python
+brew install tree
+brew install watchman
+brew install zsh-autosuggestions
+brew install zsh-completions
+brew install zsh-syntax-highlighting
 
-# install nvm
-if [ ! -d ~/.nvm ]; then
-  export NVM_DIR=
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-fi
-
-# brew cask install
-echo "
-  alfred
-  android-studio
-  calibre
-  google-chrome
-  iterm2
-  skype
-  slack
-  sourcetree
-  spectacle
-  spotify
-  visual-studio-code
-" | xargs -L1 brew cask install
-
-# brew install
-echo "
-  git
-  python
-  rbenv
-  tree
-  watchman
-  zsh
-  zsh-autosuggestions
-  zsh-completions
-  zsh-syntax-highlighting
-" | xargs brew install
-
-# pip3 install
 type pip3
 pip3 install powerline-shell
-
-# install oh-my-zsh
-if [ ! -d ~/.oh-my-zsh ]; then
-  git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-  sudo chsh -s ~/.homebrew/bin/zsh "$USER"
-fi
