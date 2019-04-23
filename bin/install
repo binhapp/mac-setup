@@ -9,10 +9,9 @@ type brew
 
 # install nvm
 if [ ! -d ~/.nvm ]; then
+  export NVM_DIR=
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 fi
-\. ~/.nvm/nvm.sh
-nvm install --lts
 
 # brew cask install
 echo "
@@ -46,13 +45,8 @@ echo "
 type pip3
 pip3 install powerline-shell
 
-# npm install
-type npm
-npm install -g yarn
-npm install -g vmd
-
 # install oh-my-zsh
 if [ ! -d ~/.oh-my-zsh ]; then
   git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-  sudo chsh -s ~/.homebrew/bin/zsh
+  sudo chsh -s ~/.homebrew/bin/zsh "$USER"
 fi

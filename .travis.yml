@@ -1,5 +1,7 @@
-os: osx
+sudo: true
 language: objective-c
+os:
+  - osx
 script:
   - ./bin/install
 cache:
