@@ -2,7 +2,15 @@
 set -e
 
 # install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [ ! -d ~/.oh-my-zsh ]; then
+  git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+  sudo chsh -s /bin/zsh "$USER"
+fi
+
+# clone z
+if [ ! -d ~/.zrupa ]; then
+  git clone https://github.com/rupa/z ~/.zrupa
+fi
 
 # install brew
 echo y | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
