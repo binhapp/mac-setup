@@ -5,7 +5,7 @@ set -e
 \. ~/.nvm/nvm.sh
 
 # load rvm
-source /Users/blcsntb/.rvm/scripts/rvm
+source ~/.rvm/scripts/rvm
 
 # verify
 brew --version
