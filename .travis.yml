@@ -3,6 +3,7 @@ language: objective-c
 os:
   - osx
 script:
-  - git clone -b dotfiles https://github.com/blcsntb/mac-setup ~/.dotfiles
+  - curl https://raw.githubusercontent.com/blcsntb/mac-setup/dotfiles/dotfiles.sh | bash
   - source ~/.dotfiles/dotfiles.sh
   - install_dotfiles
+  - upgrade_dotfiles
