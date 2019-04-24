@@ -1,25 +1,23 @@
 [![Build Status](https://travis-ci.org/blcsntb/mac-setup.svg?branch=master)](https://travis-ci.org/blcsntb/mac-setup)
 
-![](./iterm2.png)
-
 # Getting Started
 
-## Install
-
-Install the latest Xcode command line tools:
+## Requirement
 
 ```
 xcode-select --install
 ```
 
-Install *mac-setup* using curl
+## Install
 
 ```
-curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup | bash -s all && source ~/.zshrc
+curl https://raw.githubusercontent.com/blcsntb/mac-setup/dotfiles/dotfiles.sh | bash
+source ~/.dotfiles/dotfiles.sh
+install_dotfiles
 ```
 
-## Update
+## Upgrade
 
 ```
-mac-update
+upgrade_dotfiles
 ```
