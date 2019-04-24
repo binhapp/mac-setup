@@ -22,6 +22,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
 alias mac='~/mac-setup/mac-setup'
 alias mac-update='mac all && source ~/.zshrc'
 alias emulator=$ANDROID_HOME/tools/emulator
@@ -48,8 +51,9 @@ function install_powerline_precmd() {
 install_powerline_precmd
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fpath=(/usr/local/share/zsh-completions $fpath)
+source ~/.dotfiles/dotfiles.sh
+source ~/.homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fpath=(~/.homebrew/share/zsh-completions $fpath)
 
 . ~/.zrupa/z.sh
