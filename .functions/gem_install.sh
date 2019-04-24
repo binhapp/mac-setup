@@ -3,4 +3,5 @@ gem_install() {
   rbenv local $(cat ~/.ruby-version)
   gem install cocoapods
   gem install fastlane
+  gem install xcode-install
 }
