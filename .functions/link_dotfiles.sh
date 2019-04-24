@@ -1,7 +1,5 @@
 link_dotfiles() {
-  if [ -z "$DOTFILES_DIR" ]; then
-    DOTFILES_DIR=~/.dotfiles
-  fi
+  DOTFILES_DIR=~/.dotfiles
 
   # zshrc
   [ -f ~/.zshrc ] && rm ~/.zshrc
