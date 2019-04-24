@@ -13,7 +13,8 @@ update_dotfiles_repo() {
   fi
 }
 
-alias load_functions='for f in $DOTFILES_DIR/.functions/*; do source $f; done'
+for f in $DOTFILES_DIR/.functions/*; do source $f; done
+
 alias install_dotfiles='
   clone_dotfiles_repo
   clone_z
@@ -30,5 +31,3 @@ alias install_dotfiles='
   gem_install
   npm_install
 '
-
-load_functions

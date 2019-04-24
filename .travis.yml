@@ -3,5 +3,17 @@ language: objective-c
 os:
   - osx
 script:
-  - curl https://raw.githubusercontent.com/blcsntb/mac-setup/dotfiles/dotfiles.sh | bash
-  - install_dotfiles
+  - git clone -b dotfiles https://github.com/blcsntb/mac-setup ~/.dotfiles
+  - source ~/.dotfiles/dotfiles.sh
+  - clone_z
+  - download_fonts
+  - link_dotfiles
+  - install_oh_my_zsh
+  - install_homebrew
+  - install_rbenv
+  - install_nvm
+  - source ~/.zshrc
+  - brew_install
+  - pip3_install && source ~/.zshrc
+  - gem_install
+  - npm_install
