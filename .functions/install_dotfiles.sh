@@ -7,9 +7,10 @@ install_dotfiles() {
   install_rbenv
   install_nvm
   source ~/.zshrc
-  # brew_cask_install
   brew_install
   pip3_install && source ~/.zshrc
   gem_install
   npm_install
+  brew_cask_install
+  macos
 }
