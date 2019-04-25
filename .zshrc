@@ -2,7 +2,6 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES && killal
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
 alias xcode='open -a Xcode'
 alias sourcetree='open -a SourceTree'
-alias restree='killall Sourcetree && stree'
 
 ZSH_THEME="robbyrussell"
 export ZSH=~/.oh-my-zsh
