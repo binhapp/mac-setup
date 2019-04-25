@@ -3,11 +3,10 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO && killall
 alias xcode='open -a Xcode'
 alias sourcetree='open -a SourceTree'
 alias restree='killall Sourcetree && stree'
-alias vscode='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 
 ZSH_THEME="robbyrussell"
 export ZSH=~/.oh-my-zsh
-export REACT_EDITOR=vscode
+export REACT_EDITOR=code
 export PATH=$HOME/.homebrew/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
