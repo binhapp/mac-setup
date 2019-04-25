@@ -2,8 +2,9 @@ sudo: true
 language: objective-c
 os:
   - osx
-script:
+install:
   - curl https://raw.githubusercontent.com/blcsntb/mac-setup/dotfiles/dotfiles.sh | bash
   - source ~/.dotfiles/dotfiles.sh
   - install_dotfiles
+script:
   - upgrade_dotfiles

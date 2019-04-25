@@ -13,5 +13,4 @@ install_dotfiles() {
   npm_install
   brew_cask_install
   macos
-  return $?
 }
