@@ -11,6 +11,7 @@ install_dotfiles() {
   pip3_install && source ~/.zshrc
   gem_install
   npm_install
-  brew_cask_install
+  sync_brew_cask_list
+  sync_vscode_extensions
   macos
 }
