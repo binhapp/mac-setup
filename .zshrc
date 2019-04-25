@@ -7,6 +7,7 @@ ZSH_THEME="robbyrussell"
 export ZSH=~/.oh-my-zsh
 export REACT_EDITOR=code
 export PATH=$HOME/.homebrew/bin:$PATH
+export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles/dotfiles.sh
