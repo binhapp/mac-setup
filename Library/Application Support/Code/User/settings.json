@@ -2,6 +2,7 @@
   "editor.detectIndentation": false,
   "editor.fontSize": 14,
   "editor.minimap.enabled": false,
+  "editor.renderFinalNewline": false,
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "editor.wrappingIndent": "none",

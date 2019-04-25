@@ -1,6 +1,10 @@
-os: osx
+sudo: true
 language: objective-c
+os:
+  - osx
 install:
-  - curl https://raw.githubusercontent.com/blcsntb/mac-setup/master/mac-setup | bash -s all
+  - curl https://raw.githubusercontent.com/blcsntb/mac-setup/dotfiles/dotfiles.sh | bash
+  - source ~/.dotfiles/dotfiles.sh
+  - install_dotfiles
 script:
-  - ~/mac-setup/mac-setup all
+  - upgrade_dotfiles

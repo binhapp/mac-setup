@@ -1,0 +1,11 @@
+alfred
+android-studio
+calibre
+google-chrome
+iterm2
+skype
+slack
+sourcetree
+spectacle
+spotify
+visual-studio-code
