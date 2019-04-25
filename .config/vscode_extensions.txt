@@ -1,0 +1,7 @@
+dbaeumer.vscode-eslint
+eamodio.gitlens
+Orta.vscode-jest
+ryanluker.vscode-coverage-gutters
+shd101wyy.markdown-preview-enhanced
+vscodevim.vim
+vsmobile.vscode-react-native
