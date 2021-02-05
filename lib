@@ -14,7 +14,7 @@ not_install() {
 }
 
 log_installing() {
-  error_log installing $1...
+  echo 🚀 installing $1...
 }
 
 log_installed() {
