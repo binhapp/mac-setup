@@ -115,7 +115,6 @@ config() {
   run fonts install
   iterm2
   spectacle
-  vscode
 }
 
 clone_or_pull() {
